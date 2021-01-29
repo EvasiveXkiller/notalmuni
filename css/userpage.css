@@ -2,7 +2,7 @@
 	margin: 0;
 }
 body {
-	background-image: url("../Sun-U_morning.jpg");
+	background-image: url("../bg2.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
@@ -24,7 +24,7 @@ a {
 }
 
 .viewport .sidebar h2 {
-	color: #fff;
+	color: #66fcf1;
 	text-align: center;
 	margin-bottom: 50px;
 	font-style: oblique;
@@ -83,7 +83,7 @@ a {
 	padding: 20px;
 	font-size: 30px;
 	text-shadow: 0 0 2px inherit;
-	color: rgb(0, 0, 0);
+	color:  #ffffff;
 }
 
 .homeflex-container {
@@ -110,7 +110,7 @@ a {
 }
 .card:hover {
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-	background-color: rgba(0, 0, 0);
+	background-color: rgba(184, 113, 190, 0.733);
 }
 .container {
 	color: white;
