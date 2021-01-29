@@ -72,9 +72,11 @@ a {
 .flex-container {
 	margin-left: 10%;
 	display: flex;
-	justify-content: left;
+	justify-content: center;
 	flex-wrap: wrap;
-	padding: 50px;
+	padding: 10px;
+	flex-direction: column;
+	align-items: center;
 }
 .flex-container > div {
 	font-family: "Open Sans", serif;
