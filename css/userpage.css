@@ -2,7 +2,7 @@
 	margin: 0;
 }
 body {
-	background-image: url("/Sun-U_morning.jpg");
+	background-image: url("/oybtdwhu93041.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
@@ -43,6 +43,10 @@ a {
 	background-color: azure;
 	transition: background-color 0.2s;
 	color: black;
+}
+
+.viewport .sidebar .navactive {
+	background-color: rgb(80, 80, 80);
 }
 
 .viewport .main_content {
@@ -87,7 +91,7 @@ a {
 	margin-right: 50px;
 	display: flex;
 	justify-content: center;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	padding: 50px;
 }
 .homeflex-container > a {
@@ -101,7 +105,7 @@ a {
 }
 .card {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: rgba(0, 0, 0, 0.6);
 	transition: 0.3s;
 }
 .card:hover {
