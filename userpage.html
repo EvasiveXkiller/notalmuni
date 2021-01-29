@@ -6,74 +6,83 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Profile page</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title></title>
+		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="./css/userpage.css" />
+		<link rel="stylesheet" href="/css/userpage.css" />
 	</head>
 	<body>
-		<div class="topnav">
-			<label>Almuni Customer Page</label>
-			<label style="float: right">Logout</label>
-			<label style="float: right" id="clock"></label>
-		</div>
-		<div>
-			<div class="navigation">
-				<a href="#" class="navactive">Dashboard</a><br />
-				<a href="#">Details</a><br />
-				<a href="#">About us</a><br />
-				<a href="#">Licenses</a><br />
-				<a href="#">Logout</a><br />
-			</div>
-			<div class="flex-container">
-				<div>
-					<div><h2>Welcome [placeholder]!</h2></div>
-					<br />
-					<div>What would you like to do today</div>
+		<div class="viewport">
+			<div class="sidebar">
+				<h2>ALMUNI CRM</h2>
+				<div class="nav">
+					<a href="#" class="navactive">Dashboard</a>
+					<a href="#">Details</a>
+					<a href="#">About us</a>
+					<a href="#">Licenses</a>
+					<a href="#">Logout</a>
 				</div>
 			</div>
-			<div class="homeflex-container">
-				<a
-					href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-					class="card"
-				>
-					<div class="container">
-						<h4><b>View Information</b></h4>
-						<small>View Your Information Here</small>
+			<div class="main_content">
+				<div class="header">
+					<span id="username" name="uid"
+						>Currently Logged In as: [placeholder]
+					</span>
+					<span id="clock" style="float: right"></span>
+				</div>
+				<div class="flex-container">
+					<div>
+						<div><h2>Welcome [placeholder]!</h2></div>
+						<br />
+						<div>What would you like to do today</div>
 					</div>
-				</a>
-				<a
-					href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-					class="card"
-				>
-					<div class="container">
-						<h4><b>Update Information</b></h4>
-						<small>Update Your Information Here</small>
-					</div>
-				</a>
+				</div>
+				<div class="homeflex-container">
+					<a
+						href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+						class="card"
+					>
+						<div class="container">
+							<h4><b>View Information</b></h4>
+							<small>View Your Information Here</small>
+						</div>
+					</a>
+					<a
+						href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+						class="card"
+					>
+						<div class="container">
+							<h4><b>Update Information</b></h4>
+							<small>Update Your Information Here</small>
+						</div>
+					</a>
+				</div>
 			</div>
 		</div>
-	</body>
-	<script>
-		let span = document.getElementById("clock");
 
-		function time() {
-			var d = new Date();
-			var s = d.getSeconds();
-			var m = d.getMinutes();
-			var h = d.getHours();
-			span.textContent =
-				("0" + h).substr(-2) +
-				":" +
-				("0" + m).substr(-2) +
-				":" +
-				("0" + s).substr(-2);
-		}
-		window.addEventListener("load" ,()=> {
-			setInterval(time, 1000);
-		})
-	</script>
+		<script>
+			let span = document.getElementById("clock");
+
+			function time() {
+				var d = new Date();
+				var s = d.getSeconds();
+				var m = d.getMinutes();
+				var h = d.getHours();
+				span.textContent =
+					("0" + h).substr(-2) +
+					":" +
+					("0" + m).substr(-2) +
+					":" +
+					("0" + s).substr(-2);
+			}
+			window.addEventListener("load", () => {
+				setInterval(time, 1000);
+			});
+		</script>
+	</body>
 </html>

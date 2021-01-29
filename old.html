@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Profile page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/userpage.css" />
+	</head>
+	<div>
+		<div class="navigation">
+			<h2>Almuni Customer Page</h2>
+			<ul>
+				<li><a href="#" class="navactive">Dashboard</a></li>
+				<li><a href="#">Details</a></li>
+				<li><a href="#">About us</a></li>
+				<li><a href="#">Licenses</a></li>
+				<li><a href="#">Logout</a></li>
+			</ul>
+		</div>
+		<div class="maincontent">
+			<div class="topnav">
+				<label style="float: right">Logout</label>
+				<label style="float: right" id="clock"></label>
+			</div>
+			<div class="flex-container">
+				<div>
+					<div><h2>Welcome [placeholder]!</h2></div>
+					<br />
+					<div>What would you like to do today</div>
+				</div>
+			</div>
+			<div class="homeflex-container">
+				<a
+					href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+					class="card"
+				>
+					<div class="container">
+						<h4><b>View Information</b></h4>
+						<small>View Your Information Here</small>
+					</div>
+				</a>
+				<a
+					href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+					class="card"
+				>
+					<div class="container">
+						<h4><b>Update Information</b></h4>
+						<small>Update Your Information Here</small>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	</body>
+	<script>
+		let span = document.getElementById("clock");
+
+		function time() {
+			var d = new Date();
+			var s = d.getSeconds();
+			var m = d.getMinutes();
+			var h = d.getHours();
+			span.textContent =
+				("0" + h).substr(-2) +
+				":" +
+				("0" + m).substr(-2) +
+				":" +
+				("0" + s).substr(-2);
+		}
+		window.addEventListener("load", () => {
+			setInterval(time, 1000);
+		});
+	</script>
+</html>
