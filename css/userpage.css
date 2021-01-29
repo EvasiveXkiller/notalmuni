@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+}
+html {
+    background-image: url("/oybtdwhu93041.jpg");
+    background-size: cover;
+}
+.topnav {
+	background-color: #333;
+    overflow: hidden;
+}
+.topnav label {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	font-family: "Open Sans";
+	font-weight: 200;
+}
+.flex-container {
+	margin-left: 10%;
+	display: flex;
+	justify-content: left;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+.flex-container > div {
+	font-family: "Open Sans", serif;
+	font-weight: 350;
+	margin: 10px;
+	padding: 20px;
+	font-size: 30px;
+	text-shadow: 0 0 2px inherit;
+	color: rgb(0, 0, 0);
+}
+.navigation {
+	float: left;
+	height: 100%;
+	max-width: 15%;
+	min-width: 10%;
+    text-align: justify;
+    background-color: rgb(31, 31, 31);
+    padding-top: 20px;
+    position: fixed;
+}
+.navigation a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    font-family: "Open Sans", serif;
+}
+.navigation a:hover {
+    background-color: azure;
+    transition: background-color 0.2s;
+}
+
