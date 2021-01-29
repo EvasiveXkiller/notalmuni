@@ -18,6 +18,7 @@
 		<div class="topnav">
 			<label>Almuni Customer Page</label>
 			<label style="float: right">Logout</label>
+			<label style="float: right" id="clock"></label>
 		</div>
 		<div>
 			<div class="navigation">
@@ -35,19 +36,44 @@
 				</div>
 			</div>
 			<div class="homeflex-container">
-				<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="card">
-						<div class="container">
-							<h4><b>View Information</b></h4>
-							<small>View Your Information Here</small>
-						</div>
+				<a
+					href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+					class="card"
+				>
+					<div class="container">
+						<h4><b>View Information</b></h4>
+						<small>View Your Information Here</small>
+					</div>
 				</a>
-				<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="card">
-						<div class="container">
-							<h4><b>Update Information</b></h4>
-							<small>Update Your Information Here</small>
-						</div>
+				<a
+					href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+					class="card"
+				>
+					<div class="container">
+						<h4><b>Update Information</b></h4>
+						<small>Update Your Information Here</small>
+					</div>
 				</a>
 			</div>
 		</div>
 	</body>
+	<script>
+		let span = document.getElementById("clock");
+
+		function time() {
+			var d = new Date();
+			var s = d.getSeconds();
+			var m = d.getMinutes();
+			var h = d.getHours();
+			span.textContent =
+				("0" + h).substr(-2) +
+				":" +
+				("0" + m).substr(-2) +
+				":" +
+				("0" + s).substr(-2);
+		}
+		window.addEventListener("load" ,()=> {
+			setInterval(time, 1000);
+		})
+	</script>
 </html>
