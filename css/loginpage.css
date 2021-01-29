@@ -1,0 +1,60 @@
+.body{
+    font-family: "Open Sans", serif;
+    margin:0;
+    padding:0;
+}
+.form{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    margin:auto;
+    line-height: 20px;
+}
+
+.formbox{
+    display:flex;
+    background-color:aliceblue;
+    margin-left:40%;
+    margin-right:40%;
+    margin-top:10%;
+    padding:15px;
+}
+
+.profilepicture{
+    max-width:40%;
+    margin:auto
+}
+
+.loginbutton{
+    border-style: solid;
+    border-width: 2px;
+    text-decoration: none;
+    color:rgb(0, 17, 31);
+    text-align: center;
+    flex-grow: 0.1;
+}
+.registerbutton{
+    border-style: solid;
+    border-width: 2px;
+    color:rgb(4, 16, 26);
+    text-decoration: none;
+    text-align: center;
+    flex-grow: 0.1;
+}
+.buttons{
+    display:flex;
+    justify-content:center;
+    justify-content: space-around;
+    flex-direction: column;  
+    text-align:center;
+}
+.buttons a:hover{
+    background-color:black;
+    color:white;
+    transition:0.3s;
+}
+.topnav{
+    background-color:black;
+    color:white;
+    overflow:hidden
+}
