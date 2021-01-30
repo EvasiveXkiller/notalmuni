@@ -88,88 +88,44 @@ a {
 	text-align: center;
 	width: 70%;
 }
-
-.internalflex {
-	display: flex;
-	justify-content: flex-start;
-	flex-wrap: wrap;
-	flex-direction: column;
-}
-.internalflex > a {
-	font-family: "Open Sans", serif;
-	font-weight: 350;
-	margin: 10px;
-	padding: 70px 100px;
-	font-size: 30px;
-	text-shadow: 0 0 2px inherit;
-	color: rgb(0, 0, 0);
-	text-align: center;
-	max-width: 500px;
-	min-width: 500px;
-}
 .card {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	border: 2px solid #6161617e;
 	border-radius: 8px;
 	background-color: rgba(255, 255, 255, 0.219);
 }
-.container {
-	color: rgb(0, 0, 0);
+.card:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+	transition: 0.5s ease;
 }
-input[type="text"],
-input[type="password"],
-input[type="date"],
-input[type="datetime"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-textarea,
-select {
-	background: rgba(255, 0, 0, 0.3);
-	border: none;
-	font-size: 16px;
-	height: auto;
-	margin: 0;
-	outline: 0;
-	padding: 15px;
-	width: 100%;
-	background-color: #d3d3d3;
-	color: #ffffff;
-	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
-	margin-bottom: 30px;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-	margin: 0 4px 8px 0;
-}
-
-select {
-	padding: 6px;
-	height: 32px;
-	border-radius: 2px;
-}
-
 legend {
 	font-size: 0.8em;
 	margin: 10px;
 	padding: 10px;
 	text-align: left;
 }
-
 label {
 	display: block;
 	text-align: left;
 	padding-left: 20px;
 }
-
-data{
+data {
 	text-align: center;
 }
 
 tr:hover {
-	background-color: rgb(134, 134, 134);
+	background-color: rgba(255, 255, 255, 0.356);
+}
+
+tr {
+	line-height: 60px;
+	font-size: small;
+}
+
+.data {
+	text-align: left;
+	padding-left: 20px;
+}
+.key {
+	width: 30%;
 }
