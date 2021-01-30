@@ -22,9 +22,10 @@
 				<h2>ALMUNI CRM</h2>
 				<div class="nav">
 					<a href="#" class="navactive">Dashboard</a>
-					<a href="#">View Profile</a>
+					<a href="./viewprofile.html">View Profile</a>
 					<a href="#">Edit Profile</a>
 					<a href="#">About Us</a>
+					<a href="#">Licenses</a>
 					<a href="#">Logout</a>
 				</div>
 			</div>
@@ -44,7 +45,7 @@
 				</div>
 				<div class="homeflex-container">
 					<a
-						href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+						href="viewprofile.html"
 						class="card"
 					>
 						<div class="container">
@@ -53,7 +54,7 @@
 						</div>
 					</a>
 					<a
-						href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+						href="editprofile.html"
 						class="card"
 					>
 						<div class="container">
@@ -62,26 +63,32 @@
 						</div>
 					</a>
 				</div>
+				<hr style="width: 50%; margin: auto;"">
+				<div class="flex-container" style="padding-top: 0px; padding-bottom: 0px;">
+					<div>Information</div>
+				</div>
+				<div class="homeflex-container" style="padding-top: 0px; padding-bottom: 0px;">
+					<a
+						href="viewprofile.html"
+						class="card"
+					>
+						<div class="container">
+							<h4><b>About Us</b></h4>
+							<small>Learn how we process your data and use it</small>
+						</div>
+					</a>
+					<a
+						href="editprofile.html"
+						class="card"
+					>
+						<div class="container">
+							<h4><b>Licenses</b></h4>
+							<small>Open Souce Libraries that we use</small>
+						</div>
+					</a>
+				</div>
 			</div>
 		</div>
-
-		<script>
-			let span = document.getElementById("clock");
-			function time() {
-				let d = new Date();
-				let s = d.getSeconds();
-				let m = d.getMinutes();
-				let h = d.getHours();
-				span.textContent =
-					("0" + h).substr(-2) +
-					":" +
-					("0" + m).substr(-2) +
-					":" +
-					("0" + s).substr(-2);
-			}
-			window.addEventListener("load", () => {
-				setInterval(time, 1000);
-			});
-		</script>
+		<script src="clock.js"></script>
 	</body>
 </html>

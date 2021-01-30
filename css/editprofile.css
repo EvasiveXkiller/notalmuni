@@ -148,3 +148,28 @@ tr {
 ::-webkit-scrollbar-thumb:hover {
 	background: #555;
 }
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background: rgba(255,255,255,0.3);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  background-color: #D3D3D3;
+  color: #808080;
+  width: 70%;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+}
