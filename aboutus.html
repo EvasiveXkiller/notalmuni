@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title></title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/aboutus.css" />
+	</head>
+	<body>
+		<div class="viewport">
+			<div class="sidebar">
+				<h2>ALMUNI CRM</h2>
+				<div class="nav">
+					<a href="#" >Dashboard</a>
+					<a href="#">View Profile</a>
+					<a href="#">Edit Profile</a>
+					<a href="#"class="navactive">About Us</a>
+					<a href="#">Logout</a>
+				</div>
+			</div>
+			<div class="main_content">
+				<div class="header">
+					<span id="username" name="uid"
+						>Currently Logged In as: [placeholder]
+					</span>
+					<span id="clock" style="float: right"></span>
+				</div>
+				<div class="flex-container">
+					<div>
+						<div><h1>WELCOME</h1></div>
+						<small>KNOW MORE ABOUT US</small>
+					</div>
+				</div>
+				<div class="body">
+					<div class="image">
+					<img src="Jack.JPG" alt="CEO" style="width: 70%;">	
+				</div>
+					<div class="container">
+						<h1>JACK CEO</h1>
+						EDITOR 
+						BIG BOSS
+					</div>
+				</div>
+				<div class="body">
+					<div class="image">
+					<img src="Carlson.jpg" alt="CEO" style="width: 70%;">	
+				</div>
+					<div class="container">
+						<h1>CARLSON CEO</h1>
+						EDITOR 
+						GENIUS
+					</div>	
+				</div>
+				<div class="body">
+					<div class="image">
+					<img src="Sheila.jpg" alt="COO" style="width: 70%;">	
+				</div>
+					<div class="container">
+						<h1>SHEIA COO</h1>
+						EDITOR 
+						OPERATING
+					</div>		
+					</div>
+					</div>
+				</div>
+				</div>
+                    
+                    
+
+		<script>
+			let span = document.getElementById("clock");
+			function time() {
+				let d = new Date();
+				let s = d.getSeconds();
+				let m = d.getMinutes();
+				let h = d.getHours();
+				span.textContent =
+					("0" + h).substr(-2) +
+					":" +
+					("0" + m).substr(-2) +
+					":" +
+					("0" + s).substr(-2);
+			}
+			window.addEventListener("load", () => {
+				setInterval(time, 1000);
+			});
+		</script>
+	</body>
+</html>
