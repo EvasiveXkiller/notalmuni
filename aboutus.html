@@ -12,8 +12,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
-			rel="stylesheet"
-		/>
+			rel="stylesheet"/>
 		<link rel="stylesheet" href="./css/aboutus.css" />
 	</head>
 	<body>
@@ -70,30 +69,7 @@
 						EDITOR 
 						OPERATING
 					</div>		
-					</div>
-					</div>
-				</div>
-				</div>
-                    
-                    
-
-		<script>
-			let span = document.getElementById("clock");
-			function time() {
-				let d = new Date();
-				let s = d.getSeconds();
-				let m = d.getMinutes();
-				let h = d.getHours();
-				span.textContent =
-					("0" + h).substr(-2) +
-					":" +
-					("0" + m).substr(-2) +
-					":" +
-					("0" + s).substr(-2);
-			}
-			window.addEventListener("load", () => {
-				setInterval(time, 1000);
-			});
-		</script>
+				</div>	
+				<script src="clock.js"></script>        
 	</body>
 </html>
