@@ -1,0 +1,163 @@
+<?php
+	include("session.php");
+	include("header.php");
+	include("../dbconn.php");
+?>
+		<link rel="stylesheet" href="./css/master.css" />
+        <link rel="stylesheet" href="./css/userpage.css" />
+        <link rel="stylesheet" href="./css/contactpage.css"/>
+	</head>
+	<body>
+		<div class="viewport">
+			<div class="sidebar">
+				<h2>ALMUNI CRM</h2>
+				<div class="nav">
+					<a href="#">Dashboard</a>
+					<a href="viewprofile.php" class="navactive">View Contacts</a>
+					<a href="#">About Us</a>
+					<a href="#">Licenses</a>
+					<a href="#">Logout</a>
+				</div> 
+			</div>
+			<div class="main_content">
+				<div class="header">
+					<span id="username" name="uid"
+						>Currently Logged In as: <?= $_SESSION["uname"] ?>
+					</span>
+					<span id="clock" style="float: right"></span>
+				</div>
+			</div>
+        </div>
+        <div>
+            <p class="contactlisttext">Contact List</p>
+        </div>
+        <div>
+            <table border="1px" class="table">
+                <tbody>
+                <tr>
+                <td>User ID</td>
+                <td>Username</td>
+                <td>User Email</td>
+                <td>User ID</td>
+                <td>User Address</td>
+                <td>User Gender</td>
+                <td>User Password</td>
+                <td>User DOB</td>
+                <td>User Notes</td>
+                <td>Status</td>
+                </tr>
+                <tr>
+                <td>1</td>
+                <td>test</td>
+                <td>test@gmail.com;</td>
+                <td>1234567890</td>
+                <td>HK</td>
+                <td>F</td>
+                <td>test</td>
+                <td>2020-02-22</td>
+                <td>null</td>
+                <td>ok</td>
+                </tr>
+                <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                </tr>
+                <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                </tr>
+                <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                </tr>
+                <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                </tr>
+                <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                </tr>
+                <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                </tr>
+                <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                </tr>
+                <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                </tr>
+                </tbody>
+                </table>
+                
+        </div>
+		<script src="../clock.js"></script>
+	</body>
+</html>

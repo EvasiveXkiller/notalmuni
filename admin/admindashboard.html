@@ -1,0 +1,53 @@
+<?php
+	include("session.php");
+	include("header.php");
+	include("../dbconn.php");
+?>
+		<link rel="stylesheet" href="./css/master.css" />
+		<link rel="stylesheet" href="./css/userpage.css" />
+	</head>
+	<body>
+		<div class="viewport">
+			<div class="sidebar">
+				<h2>ALMUNI CRM</h2>
+				<div class="nav">
+					<a href="#" class="navactive">Dashboard</a>
+					<a href="viewprofile.php">View Contacts</a>
+					<a href="#">About Us</a>
+					<a href="#">Licenses</a>	
+					<a href="#">Logout</a>
+				</div> 
+			</div>
+			<div class="main_content">
+				<div class="header">
+					<span id="username" name="uid"
+						>Currently Logged In as: <?= $_SESSION["uname"] ?>
+					</span>
+					<span id="clock" style="float: right"></span>
+				</div>
+				<div class="flex-container">
+					<div style="text-shadow: 0px 4px 3px #000000;;">
+						<div><h2>Welcome <?= $_SESSION["uname"] ?>!</h2></div>
+						<br />
+						<div>You only have one thing to do today...</div>
+					</div>
+				</div>
+				<div
+					class="homeflex-container"
+					style="padding-top: 0px; padding-bottom: 0px"
+				>
+					<a href="viewprofile.html" class="card">
+						<div class="container">
+							<h4><b>View Contacts</b></h4>
+							<small
+								>Learn how we process your data and use
+								it</small
+							>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<script src="../clock.js"></script>
+	</body>
+</html>

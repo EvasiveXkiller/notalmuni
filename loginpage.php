@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
 
 <head>
@@ -28,7 +28,7 @@
 
             </div>
             <div class="buttons">
-                <input type="submit" class="loginbutton" style="height:25px;">Login</input><br>
+                <input type="submit" class="loginbutton" style="height:25px;" value="Login"></input><br>
             </div>
             <p style="text-align:center"> Not a user? <a href="registerpage.html">Register here!</a></p>
         </form>

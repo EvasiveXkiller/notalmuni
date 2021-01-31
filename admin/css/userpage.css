@@ -1,0 +1,45 @@
+.flex-container {
+	margin-left: 10%;
+	display: flex;
+	justify-content: left;
+	flex-wrap: wrap;
+	padding: 50px;
+}
+.flex-container > div {
+	font-family: "Open Sans", serif;
+	font-weight: 350;
+	margin: 10px;
+	margin-left:10%;
+	padding: 20px;
+	font-size: 30px;
+	text-shadow: 0 0 2px inherit;
+	color: #ffffff;
+}
+
+.homeflex-container {
+	margin-left: 50px;
+	margin-right: 50px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 50px;
+}
+.homeflex-container > a {
+	font-family: "Open Sans", serif;
+	font-weight: 350;
+	margin: 10px;
+	padding: 70px 100px;
+	font-size: 30px;
+	text-shadow: 0 0 2px inherit;
+	color: rgb(0, 0, 0);
+	text-align: center;
+	max-width: 500px;
+	min-width: 500px;
+}
+.container {
+	color: white;
+}
+
+.card:hover {
+	background-color: rgba(0, 0, 0, 0.719);
+}
