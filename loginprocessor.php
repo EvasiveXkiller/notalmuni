@@ -4,10 +4,13 @@
 
     session_start();
 
+    if(!isset($_POST["login"])) {
+        //header("location:./loginpage.php");
+        echo "illegal origin";
+    }
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = safe_converter($_POST["username"]);
         $password = safe_converter($_POST["pword"]);
-        $hashedpass = password_hash($password, PASSWORD_DEFAULT);
 
         $sqlstmt = "SELECT * FROM `users` WHERE username='" . $username. "'";
 
@@ -17,18 +20,15 @@
            echo "Error";
         }
         $output = mysqli_fetch_assoc($result);
-        print_r($output);
-        if($output["user_password"] === $password) {
-            echo "password correct";
+        if($output["status_"] === "pending") {
+            header("location:./loginpage.php?state=pending");
+            exit(0);
+        }
+        if(password_verify($password, $output["user_password"])) {
             $_SESSION["ID"] = $output["user_ID"];
             header("location:./user/dashboard.php");
         } else {
-            ?>
-            <script>
-            window.alert("Something went wrong, Please check your information")
-            window.location.href = "./loginpage.php"
-            </script>
-        <?php
+            header("location:./loginpage.php?state=err");
         }
     }
 
