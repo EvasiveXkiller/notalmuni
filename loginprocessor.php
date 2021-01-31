@@ -4,6 +4,9 @@
 
     session_start();
 
+    if(!isset($_POST["submit"])) {
+        header("location:./user/dashboard.php");
+    }
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = safe_converter($_POST["username"]);
         $password = safe_converter($_POST["pword"]);
