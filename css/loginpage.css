@@ -2,6 +2,7 @@
     font-family: "Open Sans", serif;
     margin:0;
     padding:0;
+    
 }
 body{
     background-image: url("../assets/spolight.png");
@@ -81,14 +82,17 @@ body{
 .radio{
     flex-direction: row;
 }
-.registerformbox{
+.registerformboxtable{
     display:flex;
     background-color:#e7e7e7;
-    margin-left:40%;
+    margin-left:30%;
     margin-right:40%;
-    margin-top:0.3%;
+    margin-top:2.5%;
     padding:15px;
     border-radius:10px;
+    table-layout: auto;
+    width:40%;
+    line-height: 28px;
 }
 .alumnicrm{
 	color: #ffffff;
