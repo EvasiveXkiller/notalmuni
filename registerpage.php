@@ -111,6 +111,7 @@
 						type="submit"
 						style="height: 25px"
 						value="Register"
+						name="Register"
 					/>
 					<p
 						style="
