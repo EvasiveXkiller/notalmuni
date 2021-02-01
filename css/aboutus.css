@@ -1,6 +1,9 @@
 * {
 	margin: 0;
 }
+:root {
+	--fonts : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 body {
     background-image: url("../aboutus.jpg");
     opacity: 1.0;
@@ -29,7 +32,7 @@ a {
 	text-align: center;
 	margin-bottom: 50px;
 	font-style: oblique;
-	font-family: "Open Sans";
+	font-family: var(--fonts);
 }
 
 .viewport .sidebar a {
@@ -38,7 +41,7 @@ a {
 	color: #ffffff;
 	display: block;
 	margin-bottom: 10px;
-	font-family: "Open Sans";
+	font-family: var(--fonts);
 }
 .viewport .sidebar a:hover {
 	background-color: azure;
@@ -67,7 +70,7 @@ a {
 	text-align: center;
 	text-decoration: none;
 	font-size: 17px;
-	font-family: "Open Sans";
+	font-family: var(--fonts);
 	font-weight: 200;
 }
 .flex-container {
@@ -76,9 +79,11 @@ a {
 	justify-content: left;
 	flex-wrap: wrap;
 	padding: 30px;
+	font-family: var(--fonts);
+	font-size: 350;
 }
 .flex-container > div {
-	font-family: "Open Sans", serif;
+	font-family: var(--fonts);
 	font-weight: 350;
 	margin: 10px;
 	padding: 20px;
