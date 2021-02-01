@@ -3,7 +3,8 @@
 	--cardhovershadow : rgba(0, 0, 0, 0.692);
 	--titlecolor : white;
 	--titleshadow : 0px 2px 3px #000000;
-	--titlethick : 500
+	--titlethick : 500;
+	--fonts : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 * {
@@ -36,7 +37,7 @@ a {
 	color: #ffffff;
 	text-align: center;
 	margin-bottom: 50px;
-	font-family: "Open Sans";
+	font-family: var(--fonts);
 	font-weight: 200;
 }
 
@@ -46,7 +47,7 @@ a {
 	color: #ffffff;
 	display: block;
 	margin-bottom: 10px;
-	font-family: "Open Sans";
+	font-family: var(--fonts);
 }
 .viewport .sidebar a:hover {
 	background-color: azure;
@@ -75,7 +76,7 @@ a {
 	text-align: center;
 	text-decoration: none;
 	font-size: 17px;
-	font-family: "Open Sans";
+	font-family: var(--fonts);
 	font-weight: 200;
 }
 
