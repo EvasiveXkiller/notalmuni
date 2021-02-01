@@ -1,22 +1,20 @@
 :root {
-	--cardgrey : #6161617e;
-	--cardhovershadow : rgba(0, 0, 0, 0.692);
-	--titlecolor : white;
-	--titleshadow : 0px 2px 3px #000000;
-	--titlethick : 500;
-	--fonts : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	--cardgrey: #6161617e;
+	--cardhovershadow: rgba(0, 0, 0, 0.692);
+	--titlecolor: white;
+	--titleshadow: 0px 2px 3px #000000;
+	--titlethick: 500;
+	--fonts: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .flex-container {
 	display: flex;
 	justify-content: left;
 	flex-wrap: wrap;
-	padding: 50px;
 }
 .flex-container > div {
 	font-family: var(--fonts);
-	font-weight: 350;
 	margin: 10px;
-	margin-left:10%;
+	margin-left: 10%;
 	padding: 20px;
 	font-size: 30px;
 	text-shadow: 0 0 2px inherit;
@@ -64,6 +62,27 @@
 
 .card:hover {
 	background-color: rgba(0, 0, 0, 0.719);
+}
+
+select {
+	padding: 12px 13px;
+	width: 100px;
+}
+
+button {
+	padding: 10px 12px;
+	border: 2px solid black;
+	border-radius: 3px;
+	font-size: 0.5em;
+}
+button:hover {
+	background-color: lightskyblue;
+	transition: 0.7s ease;
+}
+#sort {
+	margin-top: 10px;
+	font-size: 23px;
+	color: black;
 }
 @media only screen and (max-width: 1500px) {
 	.annoucement-container > div {

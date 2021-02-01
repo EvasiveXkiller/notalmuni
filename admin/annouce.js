@@ -29,3 +29,7 @@ function deleteEntry(idOftable) {
 	ajax.open("GET", "deleteannouncement.php?" + ajaxConstruct, true);
 	ajax.send();
 }
+
+function redirectToAdd() {
+	window.location.href = "addannoucement.php";
+}
