@@ -1,16 +1,27 @@
+:root {
+	--cardgrey : #6161617e;
+	--cardhovershadow : rgba(0, 0, 0, 0.692);
+	--titlecolor : white;
+	--titleshadow : 0px 2px 3px #000000;
+	--titlethick : 500;
+	--fonts : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 *{
-    font-family: "Open Sans", serif;
+    font-family: var(--fonts)
 }
 .contactlisttext{
-    color:white;
+    color:rgb(251, 255, 0);
     font-size: 50px;
     display:flex;
-    margin-left: 15%;  
+    margin-left: 10%;  
+}
+tr:hover{
+    background-color: inherit;
 }
 .table{
-    color:rgb(14, 227, 255);
+    color:rgb(0, 0, 0);
     font-weight: bold;
-    margin-left: 15%;
+    margin-left: 10%;
     width: 80%;
     border-style: solid;
     border-color: black;
