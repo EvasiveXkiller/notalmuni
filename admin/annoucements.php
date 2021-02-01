@@ -48,7 +48,7 @@
 					id="annoucement-parent"
 				>
 				<?php
-					$selectsql = "SELECT * FROM `annoucements` LIMIT 2";
+					$selectsql = "SELECT * FROM `annoucements`";
 					$output = mysqli_query($conn, $selectsql);
 					if(mysqli_num_rows($output) > 0) {
 						while($row = mysqli_fetch_assoc($output)) {
@@ -67,18 +67,6 @@
 						}
 					}
 				?>
-					<div class="card" id="This is the first one">
-						<div class="container">
-							<div class="messagetitle">This is a word</div>
-							<div class="message">Lorem ipsum dolor sit amet. Constector</div>
-							<div class="messagefooter">Lorem ipsum dolor sit amet. Constector</div>
-						</div>
-					</div>
-					<div class="card" id="This is the second one">
-						<div class="container">
-							<h4>Pressing this will cause the page to explode in 10 seconds</h4>
-						</div>
-					</div>
 				</div>
 			</div>c
 		</div>
