@@ -42,6 +42,12 @@
 					<div style="text-shadow: 0px 4px 3px #000000;;">
 						<div><h2>Annoucements</h2></div>
 					</div>
+					<div style="text-shadow: 0px 4px 3px #000000;;">
+						<div>Sort By:</div>
+					</div>
+					<div style="text-shadow: 0px 4px 3px #000000;;">
+						<div><button>+</button></div>
+					</div>
 				</div>
 				<div
 					class="annoucement-container"
@@ -68,7 +74,7 @@
 					}
 				?>
 				</div>
-			</div>c
+			</div>
 		</div>
 		<script src="../clock.js"></script>
 		<script src="annouce_delete.js"></script>

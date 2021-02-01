@@ -7,14 +7,13 @@
 	--fonts : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .flex-container {
-	margin-left: 10%;
 	display: flex;
 	justify-content: left;
 	flex-wrap: wrap;
 	padding: 50px;
 }
 .flex-container > div {
-	font-family: "Open Sans", serif;
+	font-family: var(--fonts);
 	font-weight: 350;
 	margin: 10px;
 	margin-left:10%;
@@ -25,13 +24,13 @@
 }
 
 .annoucement-container {
+	margin-top: 0px;
 	margin-left: 25px;
 	margin-right: 25px;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	padding: 50px;
 }
 .annoucement-container > div {
 	font-family: var(--fonts);
