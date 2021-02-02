@@ -19,7 +19,7 @@
         <div class="formbox">
             <form action="loginprocessor.php" method="POST">
                 <div class="form">
-                    <img src="EmptyProfilePicture.png" class="profilepicture">
+                    <img src="assets/EmptyProfilePicture.png" class="profilepicture">
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username" style="height:25px; display:flex;" required><br>
 
