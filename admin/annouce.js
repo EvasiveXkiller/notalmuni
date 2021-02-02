@@ -1,5 +1,6 @@
 let parent = document.querySelector("#annoucement-parent");
 let selector = ".card";
+let sortdropdown = document.getElementById("sortmethod");
 
 parent.addEventListener("click", (event) => {
 	let closestMatch = event.target.closest(selector);
@@ -12,6 +13,19 @@ parent.addEventListener("click", (event) => {
         }
 	}
 });
+
+sortdropdown.addEventListener("change",() => {
+	let ajax = new XMLHttpRequest();
+	ajax.onreadystatechange = () => {
+		if(ajax.readyState === 4) {
+			console.log(ajax.responseText)
+		} 
+	}
+
+	ajax.open()
+	// ajax.send()
+	console.log(sortdropdown.value);
+})
 
 function deleteEntry(idOftable) {
 	let ajax = new XMLHttpRequest();

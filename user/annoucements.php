@@ -6,7 +6,7 @@ if (!isset($_GET["announceCount"])) {
     echo "illegal origin";
 }
 
-$selectsql = "SELECT * FROM `annoucements` LIMIT " . $_GET["announceCount"];
+$selectsql = "SELECT * FROM `annoucements` ORDER BY timestamp_ desc LIMIT " . $_GET["announceCount"];
 
 $output = mysqli_query($conn, $selectsql);
 if (mysqli_num_rows($output) > 0) {

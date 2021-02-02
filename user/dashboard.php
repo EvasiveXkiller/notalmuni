@@ -59,7 +59,7 @@ include("../dbconn.php");
 			</div>
 			<div class="information-flexbox" id="annoucements">
 				<?php
-					$selectsql = "SELECT * FROM `annoucements` LIMIT 2";
+					$selectsql = "SELECT * FROM `annoucements` ORDER BY timestamp_ desc LIMIT 2";
 					$output = mysqli_query($conn, $selectsql);
 					if(mysqli_num_rows($output) > 0) {
 						while($row = mysqli_fetch_assoc($output)) {
