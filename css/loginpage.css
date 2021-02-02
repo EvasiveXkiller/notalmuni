@@ -1,9 +1,13 @@
+:root {
+	--fonts : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 *{
-    font-family: "Open Sans", serif;
+    font-family: var(--fonts);
     margin:0;
     padding:0;
     
 }
+
 body{
     background-image: url("../assets/spolight.png");
 	background-repeat: no-repeat;
