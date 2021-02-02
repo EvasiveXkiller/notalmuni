@@ -70,7 +70,8 @@ include("../dbconn.php");
 							echo $row['annouce_content'];
 							echo "</div>";
 							echo "<div class='messagefooter'>";
-							echo $row['annouce_author'];
+							echo $row['annouce_author'] . "<br>";
+							echo $row['timestamp_'] . "<br>";
 							echo "</div>";
 							echo "</div>";
 						}

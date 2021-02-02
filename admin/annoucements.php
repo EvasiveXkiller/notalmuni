@@ -63,6 +63,9 @@ include("../dbconn.php");
 				if (mysqli_num_rows($output) > 0) {
 					while ($row = mysqli_fetch_assoc($output)) {
 						echo "<div class='card' id='" . $row["annouce_id"] . "'><div class='container'>";
+						echo "<div class='messagefooter'>";
+						echo "ID:" . $row['annouce_id'] . "<br>";
+						echo "</div>";
 						echo "<div class='messagetitle'>";
 						echo $row['annouce_title'];
 						echo "</div>";
@@ -70,7 +73,8 @@ include("../dbconn.php");
 						echo $row['annouce_content'];
 						echo "</div>";
 						echo "<div class='messagefooter'>";
-						echo $row['annouce_author'];
+						echo $row['annouce_author'] . "<br>";
+						echo $row['timestamp_'] . "<br>";
 						echo "</div>";
 						echo "</div>";
 						echo "</div>";

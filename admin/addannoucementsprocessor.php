@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $title = mysqli_real_escape_string($conn, $_POST["title"]);
     $content = mysqli_real_escape_string($conn, $_POST["content"]);
+    date_default_timezone_set("Asia/Kuala_Lumpur");
     $timestamp = date("Y-m-d H:i:s");
     $author = "Carlson";
     $insertsql = "INSERT INTO annoucements (annouce_title, annouce_content, annouce_author, timestamp_) VALUES (?,?,?,?)";
