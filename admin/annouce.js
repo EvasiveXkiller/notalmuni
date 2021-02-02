@@ -2,6 +2,7 @@ let parent = document.querySelector("#annoucement-parent");
 let selector = ".card";
 let sortdropdown = document.getElementById("sortmethod");
 
+
 parent.addEventListener("click", (event) => {
 	let closestMatch = event.target.closest(selector);
 	if (closestMatch && parent.contains(closestMatch)) {
@@ -18,12 +19,12 @@ sortdropdown.addEventListener("change",() => {
 	let ajax = new XMLHttpRequest();
 	ajax.onreadystatechange = () => {
 		if(ajax.readyState === 4) {
-			console.log(ajax.responseText)
+			redraw(ajax.responseText)
 		} 
 	}
-
-	ajax.open()
-	// ajax.send()
+	let urlConstruct = "sortannoucement.php?sort=" + sortdropdown.value
+	ajax.open("GET" , urlConstruct, true)
+	ajax.send()
 	console.log(sortdropdown.value);
 })
 
@@ -46,4 +47,8 @@ function deleteEntry(idOftable) {
 
 function redirectToAdd() {
 	window.location.href = "addannoucement.php";
+}
+function redraw(message) {
+	let redraw = document.getElementById("annoucement-parent")
+	redraw.innerHTML = message;
 }

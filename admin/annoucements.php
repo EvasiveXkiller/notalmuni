@@ -49,9 +49,12 @@ include("../dbconn.php");
 					<div>
 						<span id="sort">Sort By:</span>
 						<select id="sortmethod" name="sortmethod">
-							<option value="ID">ID</option>
-							<option value="Date">Date</option>
-							<option value="Title">Title</option>
+							<option value="IDasc">ID Asc</option>
+							<option value="IDdesc">ID Desc</option>
+							<option value="Dateasc">Date Asc</option>
+							<option value="Datedesc">Date Desc</option>
+							<option value="Titleasc">Title Asc</option>
+							<option value="Titledesc">Title Desc</option>
 						</select>
 					</div>
 				</div>
