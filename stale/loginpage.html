@@ -8,7 +8,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="./css/loginpage.css" />
     </head>
-
     <body class="body">
 
         <div class="topbar">
@@ -34,42 +33,43 @@
                         <input type="password" class="form__field" placeholder="Password" name="pword" id='pword' required />
                         <label for="pword" class="form__label">Password</label>
                     </div>
+
+                    <!-- <label for="pword"></label>
+                    <input type="password" id="pword" name="pword" placeholder="Password"style="height:25px;border:1px; border-radius:40px;" required> -->
+
                     <p class="forgotpassword"><a href="resetpasswordpage.html" style="text-decoration: none; color:#40736E">Forgot password?</a></p>
                 </div>
                 <div class="buttons">
                     <input type="submit" class="loginbutton" style="height:30px;" value="Login" name="login"></input><br>
                 </div>
                 <br>
-                <p style="text-align:center"> Not a user? <a href="registerpage.php">Register here!</a></p><br>
+                <p style="text-align:center;"> Not a user? <a href="registerpage.php" style="text-decoration: none; color:inherit">Register here!</a></p><br>
                 <p style="font-size:10px; text-align:center;"> <i>WDGE</i> &copy All Rights Reserved</p>
             </form>
         </div>
         <script src="clock.js"></script>
         <script>
             document.getElementById("togBtn").addEventListener("click" ,() =>{
-                window.location.href="adminloginpage.php";
+                window.location.href="adminloginpage.html";
             })
-            window.addEventListener("load", () => {
-                
-            })
-        </script>
+        </script>    
     </body>
 
     </html>
-    <?php
-    if (isset($_GET["state"])) {
-        if ($_GET["state"] == "err") {
-    ?>
-            <script>
-                alert("Login Error! Check your information")
-            </script>
-        <?php
-        } else if ($_GET["state"] == "pending") {
+    <!-- <?php
+        if (isset($_GET["state"])) {
+            if($_GET["state"] == "err") {
         ?>
-            <script>
+        <>
+                alert("Login Error! Check your information")
+        </>
+        <?php
+        } else if ($_GET["state"] == "pending"){
+        ?>
+            <>
                 alert("Pending for verification. Please wait for admin to approve")
-            </script>
-    <?php
+            </>
+        <?php
         }
-    }
-    ?>
+        }
+        ?> -->
