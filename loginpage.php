@@ -23,6 +23,7 @@
                     <div class="buttons">
                     <a href="adminloginpage.html" class="userloginbutton">ADMIN LOGIN</a><br><br>
                     </div>
+                    <p></p>
                     <label for="username"></label>
                     <input type="text" id="username" name="username" style="height:25px; display:flex; border-radius:40px;" placeholder="Username"required><br>
 
@@ -35,14 +36,14 @@
                     <input type="submit" class="loginbutton" style="height:30px;" value="Login" name="login"></input><br>
                 </div>
                 <p style="text-align:center"> Not a user? <a href="registerpage.php">Register here!</a></p><br>
-                <p style="font-size:10px; text-align:center;"> Wedge &copy All Rights Reserved</p>
+                <p style="font-size:10px; text-align:center;"> <i>WEDGE</i> &copy All Rights Reserved</p>
             </form>
         </div>
         <script src="clock.js"></script>
     </body>
 
     </html>
-    <!-- <?php
+    <?php
         if (isset($_GET["state"])) {
             if($_GET["state"] == "err") {
         ?>
@@ -58,4 +59,4 @@
         <?php
         }
         }
-        ?> -->
+        ?>
