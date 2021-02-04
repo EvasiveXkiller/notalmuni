@@ -13,7 +13,7 @@
         <p><span class="alumnicrm">ALUMNI CRM</span><b class="welcometoalumni">Welcome to Almuni!</b><span id="clock" class="clock"></span></p>
     </div>
     <div class="formbox">
-        <form action="loginprocessor.php" method="POST">
+        <form action="adminloginprocessor.php" method="POST">
             <div class="form">
                 <img src="assets/spolight.jpg" class="picture"><br>
                 <label class="switch">
@@ -21,11 +21,11 @@
                     <div class="slider round"></div>
                 </label>
                 <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                    <input type="input" class="form__field" placeholder="Name" name="adminusername" id='name' required />
                     <label for="name" class="form__label">Admin Username</label>
                 </div>
                 <div class="form__group field">
-                    <input type="password" class="form__field" placeholder="Password" name="pword" id='pword' required />
+                    <input type="password" class="form__field" placeholder="Password" name="adminpword" id='pword' required />
                     <label for="pword" class="form__label">Admin Password</label>
                 </div>
                 <br>
