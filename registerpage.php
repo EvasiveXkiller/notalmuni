@@ -23,7 +23,7 @@
 				<tr>
 				<td colspan="4">
 				<div class="form">
-				<img src="EmptyProfilePicture.png" class="profilepicture" />
+				<img src="EmptyProfilePicture.png" class="picture" style="max-width:30%;" />
 				</td>
 				</tr>
 				<tr>
