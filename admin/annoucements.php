@@ -1,22 +1,11 @@
 <?php
 include("../dbconn.php");
+include("header.php");
+include("session.php")
 ?>
-
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="./css/master.css" />
-	<link rel="stylesheet" href="./css/annoucements.css" />
+<link rel="stylesheet" href="./css/master.css" />
+<link rel="stylesheet" href="./css/annoucements.css" />
+<title>Annoucement Manager | Almuni CRM</title>
 </head>
 
 <body>
@@ -24,17 +13,17 @@ include("../dbconn.php");
 		<div class="sidebar">
 			<h2>ALMUNI CRM</h2>
 			<div class="nav">
-				<a href="admindashboard.html">Dashboard</a>
+				<a href="admindashboard.php">Dashboard</a>
 				<a href="viewprofile.php">View Contacts</a>
 				<a href="#" class="navactive">Annoucements</a>
 				<a href="#">About Us</a>
 				<a href="#">Licenses</a>
-				<a href="#">Logout</a>
+				<a href="logout.php">Logout</a>
 			</div>
 		</div>
 		<div class="main_content">
 			<div class="header">
-				<span id="username" name="uid">Currently Logged In as:
+				<span id="username" name="uid">Currently Logged In as: <?= $_SESSION["uname"] ?>
 				</span>
 				<span id="clock" style="float: right"></span>
 			</div>

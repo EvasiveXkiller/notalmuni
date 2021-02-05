@@ -4,6 +4,7 @@ include("../dbconn.php");
 
 if (!isset($_GET["origin"])) {
     echo "illegal origin";
+    header("location:./admindashboard.php");
 }
 $send = array();
 

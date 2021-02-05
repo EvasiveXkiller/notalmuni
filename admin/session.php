@@ -3,7 +3,7 @@
 	include('../dbconn.php');
 	
 	if (!isset($_SESSION['ID']) ||(trim ($_SESSION['ID']) == '')) {
-	    //header('location:../adminloginpage.php');
+	    header('location:../adminloginpage.php');
         exit();
 	}
     $sqlstmt = "SELECT * FROM `admin` WHERE admin_ID='" . $_SESSION['ID'] . "'";

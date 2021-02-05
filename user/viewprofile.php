@@ -3,6 +3,7 @@
 ?>
 		<link rel="stylesheet" href="./css/master.css" />
 		<link rel="stylesheet" href="./css/viewprofile.css" />
+		<title>View Profile | Almuni CRM</title>
 	</head>
 	<body>
 		<div class="viewport">

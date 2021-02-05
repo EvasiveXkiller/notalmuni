@@ -3,9 +3,8 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Reset Password</title>
+    <title>Admin Login | Almuni CRM</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./css/loginpage.css" />
 </head>
 <body class="body">

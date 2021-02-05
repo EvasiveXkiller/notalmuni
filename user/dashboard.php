@@ -5,6 +5,7 @@ include("../dbconn.php");
 ?>
 <link rel="stylesheet" href="./css/master.css" />
 <link rel="stylesheet" href="./css/userpage.css" />
+<title>Dashbord | Almuni CRM</title>
 </head>
 <script src="dashboard.js"></script>
 <body>

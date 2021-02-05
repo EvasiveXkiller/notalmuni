@@ -1,10 +1,11 @@
 <?php
 
 include("../dbconn.php");
-// if(!isset($_POST["sort"]) {
-//     echo "illegal origin";
-//     exit();
-// }
+if(!isset($_GET["sort"])) {
+    echo "illegal origin";
+    header("location:./admindashboard.php");
+    exit();
+}
 $sortmethod = "";
 
 switch($_GET["sort"]) {
