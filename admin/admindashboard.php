@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<link rel="stylesheet" href="./css/master.css" />
-		<link rel="stylesheet" href="./css/userpage.css" />
-	</head>
-	<body>
+<?php
+	include("../dbconn.php");
+	include("header.php");
+	include("session.php");
+?>
 		<div class="viewport">
 			<div class="sidebar">
 				<h2>ALMUNI CRM</h2>
@@ -16,7 +14,7 @@
 					<a href="annoucements.php">Annoucements</a>
 					<a href="#">About Us</a>
 					<a href="#">Licenses</a>
-					<a href="#">Logout</a>
+					<a href="logout.php">Logout</a>
 				</div>
 			</div>
 			<div class="main_content">
@@ -42,6 +40,13 @@
 					<div>Total Users: &nbsp;<span id="userssum"></span></div>
 					<div>Total Pending: &nbsp;<span id="pendingsum"></span></div>
 					<div>Total Admins: &nbsp;<span id="adminssum"></span></div>
+				</div>
+				<div class="flex-container" style="padding: 0px;">
+					<div style="text-shadow: 0px 4px 3px #000000">
+						<div>
+							Quick Actions
+						</div>
+					</div>
 				</div>
 				<div
 					class="homeflex-container"

@@ -22,8 +22,8 @@
         }
         $output = mysqli_fetch_assoc($result);
         if($output["admin_password"] == 123456) {
-            $_SESSION["ID"] = $output["user_ID"];
-            header("location:./adminloginpage.php?state=success");
+            $_SESSION["ID"] = $output["admin_id"];
+            header("location:./admin/admindashboard.php");
         } else {
             header("location:./adminloginpage.php?state=err");
         }
