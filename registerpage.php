@@ -36,7 +36,7 @@
 								type="email"
 								class="form__field"
 								placeholder="Email"
-								name="name"
+								name="email"
 								id="email"
 								required
 							/>
