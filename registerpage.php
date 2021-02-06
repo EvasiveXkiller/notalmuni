@@ -22,7 +22,7 @@
 				<tr>
 				<td colspan="4">
 				<div class="form">
-				<img src="EmptyProfilePicture.png" class="picture" style="max-width:30%;" />
+				<img src="assets/EmptyProfilePicture.png" class="picture" style="max-width:30%;" />
 				</td>
 				</tr>
 				<tr>
@@ -64,7 +64,7 @@
 			<tr>
 				<td colspan="4">
 			<div class="buttons">
-				<input type="submit" style="height: 25px" value="Register" name="Register" />
+				<input type="submit" class="loginbutton" style="height: 25px" value="Register" name="Register" />
 				<p style="
 							font-size: 12px;
 							color: rgba(255, 0, 0, 0.726);
