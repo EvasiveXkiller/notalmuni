@@ -1,0 +1,219 @@
+:root {
+	--cardgrey: #6161617e;
+	--cardhovershadow: rgba(0, 0, 0, 0.692);
+	--titlecolor: white;
+	--titleshadow: 0px 2px 3px #000000;
+	--titlethick: 500;
+	--fonts: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+* {
+	font-family: var(--fonts);
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url("../assets/spolight.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.footerboxsignin,
+.footerboxsubmit {
+	padding: 5px;
+}
+
+.footerboxsubmit > button {
+	background-color: #4caf50;
+	border: none;
+	color: white;
+	padding: 10px 32px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 4px 2px;
+	transition-duration: 0.4s;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.footerboxsubmit > button:hover {
+	background-color: white;
+	color: black;
+}
+
+.footerboxsignin > button {
+	background-color: inherit; 
+	border: none;
+	color: white;
+	padding: 10px 25px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 4px 2px;
+	border-radius: 8px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+
+.footerboxsignin > button:hover {
+	background-color: rgba(255, 255, 255, 0.247);
+	color: azure;
+}
+
+.topbar {
+	font-size: 25px;
+	background-color: rgba(0, 0, 0, 0.6);
+	color: white;
+	text-rendering: optimizeLegibility;
+	margin: 0px;
+	text-align: center;
+	line-height: 60px;
+	transition: background-color 0.3s;
+}
+.topbar :hover {
+	background-color: rgba(0, 0, 0, 1);
+	transition: 0.3s;
+}
+
+form {
+	height: 90vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.centerbox {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	border: 1px solid black;
+	backdrop-filter: blur(10px);
+	border-radius: 10px;
+	align-items: center;
+}
+
+.boxtitle {
+	color: white;
+	font-size: 1.7em;
+	font-family: var(--fonts);
+	padding: 25px;
+}
+
+.registerformboxtable {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 15px;
+	min-width: 1000px;
+}
+
+@media only screen and (max-width: 1040px) {
+	.registerformboxtable {
+		flex-direction: column;
+		min-width: 500px;
+	}
+	form {
+		margin-top: 130px;
+	}
+}
+
+.registerformboxtable > .col {
+	color: white;
+	width: 100%;
+	padding: 5px;
+	display: flex;
+	justify-content: left;
+	flex-direction: column;
+}
+.clock {
+	float: right;
+	font-weight: 200;
+	font-size: 17px;
+	position: relative;
+	right: 2%;
+}
+
+.form__group {
+	position: relative;
+	padding: 15px 0 0 0;
+	margin-top: 10px;
+	width: 85%;
+	align-self: center;
+}
+.form__field {
+	width: 100%;
+	border: 0;
+	border-bottom: 2px solid #9b9b9b;
+	outline: 0;
+	font-size: 1rem;
+	color: inherit;
+	padding: 7px 0;
+	background: transparent;
+	transition: border-color 0.2s;
+}
+.form__field::placeholder {
+	color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+	font-size: 1rem;
+	cursor: text;
+	top: 20px;
+}
+.form__label {
+	position: absolute;
+	top: 0;
+	display: block;
+	transition: 0.2s;
+	font-size: 1rem;
+	color: #9b9b9b;
+}
+.form__field:focus {
+	padding-bottom: 6px;
+	font-weight: 700;
+	border-width: 3px;
+	border-image: linear-gradient(to right, #7e5a5a, #397e54);
+	border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+	position: absolute;
+	top: 0;
+	display: block;
+	transition: 0.2s;
+	font-size: 0.7rem;
+	color: inherit;
+	font-weight: 700;
+}
+
+.radiowrapper {
+	display: inline;
+}
+
+.radiowrapper input {
+	visibility: hidden;
+	width: 0;
+}
+
+.radiowrapper label {
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.radiowrapper label:hover {
+	background-color: grey;
+}
+
+.radiowrapper input:checked + label {
+	text-transform: uppercase;
+	background-color: #397e54;
+}
+
+.alumnicrm {
+	color: #ffffff;
+	font-family: var(--fonts);
+	font-weight: 200;
+	float: left;
+	position: relative;
+	left: 2%;
+}
