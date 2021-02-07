@@ -119,6 +119,12 @@ form {
 	}
 }
 
+@media only screen and (max-height: 600px) {
+	form {
+		margin-top: 130px;
+	}
+}
+
 .registerformboxtable > .col {
 	color: white;
 	width: 100%;
