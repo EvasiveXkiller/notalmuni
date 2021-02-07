@@ -208,6 +208,7 @@ form {
 
 .radiowrapper label:hover {
 	background-color: grey;
+	cursor: pointer;
 }
 
 .radiowrapper input:checked + label {

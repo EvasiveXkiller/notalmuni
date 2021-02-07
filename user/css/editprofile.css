@@ -1,3 +1,12 @@
+:root {
+	--cardgrey : #6161617e;
+	--cardhovershadow : rgba(0, 0, 0, 0.692);
+	--titlecolor : white;
+	--titleshadow : 0px 2px 3px #000000;
+	--titlethick : 500;
+	--fonts : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .flex-container {
 	display: flex;
 	justify-content: center;
@@ -7,7 +16,7 @@
 	align-items: center;
 }
 .flex-container > div {
-	font-family: "Open Sans", serif;
+	font-family: var(--fonts);
 	font-weight: 350;
 	margin: 10px;
 	padding: 20px;
