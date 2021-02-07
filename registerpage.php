@@ -74,7 +74,7 @@
 							<input
 								type="password"
 								class="form__field"
-								placeholder="Passowrd"
+								placeholder="Password"
 								name="pword"
 								id="pword"
 								required
@@ -87,7 +87,7 @@
 							<input
 								type="password"
 								class="form__field"
-								placeholder="Passowrd"
+								placeholder="Password"
 								name="pword2"
 								id="pword2"
 								required
