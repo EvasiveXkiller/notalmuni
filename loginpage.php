@@ -36,7 +36,7 @@
             </div>
             <br>
             <p style="text-align:center"> Not a user? <a href="registerpage.php">Register here!</a></p><br>
-            <p style="font-size:10px; text-align:center;"> <i>WDGE</i> &copy All Rights Reserved</p>
+            <p style="font-size:10px; text-align:center;"> <i>WEDGE</i> &copy All Rights Reserved</p>
         </form>
     </div>
     <script src="clock.js"></script>

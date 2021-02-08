@@ -14,7 +14,7 @@
 }
 
 body {
-	background-image: url("../image/spolight.png");
+	background-image: url("../../assets/spolight.jpg");
 	opacity: 1;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -112,18 +112,43 @@ a {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	height: 400px;
-    padding: 60px;
+	justify-content: space-evenly;
 }
-.information-container > div {
+.information-container > div.leftright {
 	color: white;
-    max-width: 1000px;
-    text-align: left;
+	text-align: center;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
 }
+.leftright > div {
+	color: white;
+	text-align: left;
+	min-width: 50%;
+	margin: 50px;
+}
+
+.redirect {
+	padding: 16px 32px;
+	margin-top: 20px;
+	margin-left: 30px;
+	border-radius: 8px;
+	border: 0px;
+	transition: 0.3s ease;
+	background-color: rgba(85, 85, 85, 0.438);
+	color:rgb(255, 255, 255);
+}
+
+.redirect:hover {
+	background-color: #40736e;
+	color :white;
+	transition: 0.3s ease;
+}
+
 /***footer*/
 .footer-under {
 	background-color: rgb(39, 39, 39);
-    padding: 40px 0px;
+	padding: 40px 0px;
 	min-height: 10px;
 	color: #eee;
 	position: relative;
