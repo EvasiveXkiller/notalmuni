@@ -39,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_stmt_execute($stmt);
             echo mysqli_stmt_error($stmt);
             echo "success";
+            header("location:./registerpage.php?status=success");
         }
     }
 }
