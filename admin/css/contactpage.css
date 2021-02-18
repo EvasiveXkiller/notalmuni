@@ -9,23 +9,19 @@
 *{
     font-family: var(--fonts)
 }
-.contactlisttext{
-    color:rgb(251, 255, 0);
-    font-size: 50px;
-    display:flex;
-    margin-left: 10%;  
-}
-tr:hover{
-    background-color: inherit;
-}
 .table{
-    color:rgb(0, 0, 0);
-    font-weight: bold;
-    margin-left: 10%;
-    width: 80%;
-    border-style: solid;
-    border-color: black;
-    border-collapse: collapse;
-    text-align:center;
-    
+    display:flex;
 }
+.tabletitle{
+    display:flex;
+    flex-direction: column;
+    border:5px;
+    justify-content:space-between;
+    background-color: white;
+    min-width: 120px;
+    text-align:center;
+    border:solid;
+    border-color:black;
+    border-width:1px;
+}
+
