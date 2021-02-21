@@ -81,6 +81,7 @@ a {
 	padding: 30px;
 	font-family: var(--fonts);
 	font-size: 350;
+	text-align:center;
 }
 .flex-container > div {
 	font-family: var(--fonts);
@@ -91,26 +92,21 @@ a {
 	text-shadow: 0 0 2px inherit;
 	color:  #ffffff;
 	word-spacing: 10px;
-	text-align:center;
+
 }
 .body {
 	background-color: rgba(51, 51, 51, 0.7);
-	height: 150%;
+	height:unset;
   	width: 90%;
-  	padding-top: 20px;
+  	padding-top: 50px;
 	margin-left: 50px;
+
 }
 .image {
 	float: left;
-	margin-left: 12px;
-	margin-right: 23px;
-	padding: 30px;
+	margin-left: 3%;
+	padding: 2%;
 
-}
-.body::after {
-	content: "";
-	clear: both;
-	display: table;
 }
 .container {
 	font-family: var(--fonts);
@@ -120,7 +116,7 @@ a {
 .content > div {
 	font-family: var(--fonts);
 	font-weight: 350;
-	margin: 10px;
+	margin: 20%;
 	padding: 20px;
 	font-size: 20px;
 	text-shadow: 0 0 2px inherit;
@@ -130,9 +126,10 @@ a {
 }
 .bottom {
 	text-align: center;
+	margin: 10%;
 }
 .icon {
-	text-align: left;
+
 	margin: 50px;
 	display: flex;
 }
@@ -140,5 +137,5 @@ a {
 	color: #ffffff;
 	font-size: 100;
 	margin: 10px;
-	text-align: right;
+	text-align: left;
 }
