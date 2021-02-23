@@ -1,12 +1,13 @@
 * {
 	margin: 0;
 	box-sizing: border-box;
+	text-rendering: optimizeLegibility;
 }
 :root {
-	--fonts : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	--fonts: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
-    background-image: url("../aboutus.jpg");
+	background-image: url("../aboutus.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
@@ -73,66 +74,96 @@ a {
 	font-family: var(--fonts);
 	font-weight: 200;
 }
-.flex-container {
-	margin-left: 25%;
-	display: flex;
-	justify-content: left;
-	flex-wrap: wrap;
-	padding: 30px;
-	font-family: var(--fonts);
-	font-size: 350;
-	text-align:center;
-}
-.flex-container > div {
-	font-family: var(--fonts);
+
+.heading {
+	display: grid;
+	place-items: center;
+	padding: 16px;
 	font-weight: 350;
 	margin: 10px;
 	padding: 20px;
 	font-size: 35px;
 	text-shadow: 0 0 2px inherit;
-	color:  #ffffff;
-	word-spacing: 10px;
-
+	font-family: var(--fonts);
+	font-size: 350;
+	text-align: center;
+	backdrop-filter: blur(5px);
 }
-.body {
+
+.bodyparent {
+	display: grid;
+	place-items: center;
+}
+.bodymain {
 	background-color: rgba(51, 51, 51, 0.7);
-	height:unset;
-  	width: 90%;
-  	padding-top: 50px;
-	margin-left: 50px;
-
+	transition: all 0.5s;
+	transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+	width: 85%;
 }
+.bodymain:hover {
+	background-color: rgba(51, 51, 51, 0.877);
+	transition: all 0.5s;
+	transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1)
+}
+
+.imagewrapper {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.mission{
+	margin: auto;
+	width:clamp(23ch, 70%, 200ch);
+}
+
 .image {
-	float: left;
-	margin-left: 3%;
-	padding: 2%;
-
+	padding: 3rem;
 }
+
 .container {
 	font-family: var(--fonts);
 	color: white;
 	text-align: center;
+	letter-spacing: 0.19ch;
 }
+.content {
+	margin-top: 2rem;
+}
+
 .content > div {
 	font-family: var(--fonts);
 	font-weight: 350;
-	margin: 20%;
-	padding: 20px;
 	font-size: 20px;
 	text-shadow: 0 0 2px inherit;
-	color:  #ffffff;
-	word-spacing: 10px;
-	text-align:center;
+	color: #ffffff;
+	text-align: center;
+	padding: 1rem;
 }
+
 .bottom {
 	text-align: center;
-	margin: 10%;
+	display: grid;
+	place-items: center;
 }
 .icon {
-
-	margin: 50px;
 	display: flex;
 }
+.contactwrapper{
+	display: grid;
+	place-items: left;
+	align-items: center;
+	grid-template-columns: 10% 90%;
+}
+
+.contactwrapper > div {
+	padding: 0.6rem;
+}
+
+.fa{
+	padding-top: 7px;
+}
+
 .icon_text {
 	color: #ffffff;
 	font-size: 100;

@@ -224,3 +224,7 @@ form {
 	position: relative;
 	left: 2%;
 }
+/** use for field error
+/* input[type="email"]:invalid {
+	border-bottom: 2px solid #ff0000;
+} */
