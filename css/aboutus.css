@@ -146,9 +146,6 @@ a {
 	display: grid;
 	place-items: center;
 }
-.icon {
-	display: flex;
-}
 .contactwrapper{
 	display: grid;
 	place-items: left;
