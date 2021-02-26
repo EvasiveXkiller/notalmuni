@@ -81,7 +81,7 @@ a {
 }
 
 .intro-container {
-	background-image: url("../image/spolight.png");
+	background-image: url("../../assets/spolight.jpg");
 	position: relative;
 	color: white;
 	display: grid;
@@ -94,20 +94,23 @@ a {
 	width: auto;
 	height: auto;
 	position: relative;
+	place-items: center;
+	text-align: center;
 }
 
 .center-text {
 	font-family: var(--fonts);
-	font-size: 2.4rem;
-	text-shadow: 1px 1px 2px rgb(0, 0, 0);
-	padding-left: 2.5rem;
+	font-size: 2.7rem;
+	text-shadow: 2px 4px 7px rgb(0, 0, 0);
+	/* padding-left: 2.5rem; */
 }
 .txt-rotate {
 	font-weight: 200;
-	font-size: 1.7rem;
+	font-size: 2rem;
+	text-shadow: 2px 4px 7px rgb(0, 0, 0);
 }
 .txt-rotate > .wrap {
-	border-right: 0.08em solid #666;
+	border-right: 0.08em solid rgb(0, 0, 0);
 }
 
 .innerbar {
@@ -145,8 +148,18 @@ a {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	flex-wrap: wrap;
 }
+
+@media screen and (max-width: 1000px) {
+	.information-container {
+		flex-direction: column;
+	}
+	.information-container > div.subgrid:not(:last-child) {
+		border-right: none !important;
+		border-bottom: 1px #000000 solid !important;
+	}
+}
+
 .information-container > div.subgrid {
 	color: white;
 	max-width: 400px;
@@ -155,6 +168,7 @@ a {
 
 .information-container > div.subgrid:not(:last-child) {
 	border-right: 1px #000000 solid;
+	border-bottom: none;
 }
 
 .subgrid > div {
