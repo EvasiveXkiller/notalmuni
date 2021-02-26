@@ -51,7 +51,7 @@
 </body>
 
 </html>
-<?php
+<!-- <?php
 if (isset($_GET["state"])) {
     if ($_GET["state"] == "err") {
 ?>
@@ -67,4 +67,4 @@ if (isset($_GET["state"])) {
 <?php
     }
 }
-?>
+?> -->
