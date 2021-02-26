@@ -14,7 +14,6 @@
 }
 
 body {
-	background-image: url("../../assets/spolight.jpg");
 	opacity: 1;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -47,6 +46,7 @@ a {
 	background-color: #3d3d3da9;
 	padding: 20px 10px;
 	transition: 0.3s;
+	background-color: rgb(56, 56, 56);
 }
 
 .topbar a {
@@ -79,41 +79,84 @@ a {
 .topbar-right {
 	float: right;
 }
-.topbar:hover {
-	background-color: rgb(56, 56, 56);
-	transition: 0.3s;
-}
+
 .intro-container {
+	background-image: url("../image/spolight.png");
 	position: relative;
 	color: white;
-	display:grid;
-	place-items: center;
-	height: 500px
-}
-.center-text {
-	font-family: var(--fonts);
-	font-size: 1.7em;
-	text-shadow: 1px 1px 2px rgb(0, 0, 0);
+	display: grid;
+	align-items: center;
+	min-height: 400px;
+	background-attachment: fixed;
+	background-position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: auto;
+	height: auto;
+	position: relative;
 }
 
-.innerbar{
+.center-text {
+	font-family: var(--fonts);
+	font-size: 2.4rem;
+	text-shadow: 1px 1px 2px rgb(0, 0, 0);
+	padding-left: 2.5rem;
+}
+.txt-rotate {
+	font-weight: 200;
+	font-size: 1.7rem;
+}
+.txt-rotate > .wrap {
+	border-right: 0.08em solid #666;
+}
+
+.innerbar {
 	background-color: rgb(54, 54, 54);
 	padding: 20px 10px;
+	text-align: center;
+}
+
+.maincontent {
+	background-color: #3d3d3da9;
+}
+
+.subheadingwrapper {
+	display: grid;
+	place-items: center;
+}
+
+.subheading {
+	text-align: center;
+	font-family: var(--fonts);
+	font-size: 2.4rem;
+	font-weight: 500;
+	padding: 50px 0px;
+}
+
+.subheading > .explain {
+	font-family: inherit;
+	font-weight: 300;
+	font-size: 1.5rem;
+	width: clamp(26ch, 50vw, 64ch);
 }
 
 .information-container {
-	-webkit-backdrop-filter: blur(7px);
-	backdrop-filter: blur(7px) brightness(40%);
-	display: grid;
-    grid-template-columns: repeat(2, auto);
+	background-color: inherit;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
 }
 .information-container > div.subgrid {
 	color: white;
-	display: grid;
-	grid-template-columns: auto auto;
-	gap: 20px;
-	place-items: center;
+	max-width: 400px;
+	height: 250px;
 }
+
+.information-container > div.subgrid:not(:last-child) {
+	border-right: 1px #000000 solid;
+}
+
 .subgrid > div {
 	color: white;
 	text-align: left;
@@ -122,22 +165,30 @@ a {
 	width: clamp(23ch, 70%, 46ch);
 }
 
+.redirectbar{
+	display:grid;
+	grid-auto-flow: column;
+	grid-template-columns: auto auto;
+	grid-template-rows: 1fr 1fr;
+	align-items: center;
+	gap: 1.5rem;
+	width: 500px;
+}
+
 .redirect {
 	padding: 16px 32px;
-	margin-top: 20px;
-	margin-left: 30px;
 	border-radius: 8px;
 	border: 1px solid #40736e;
 	transition: 0.3s ease;
 	background-color: rgba(85, 85, 85, 0.438);
-	color:rgb(255, 255, 255);
+	color: rgb(255, 255, 255);
 }
 
 .redirect:hover {
 	background-color: #40736e;
-	color :white;
+	color: white;
 	transition: 0.3s ease;
-	cursor:pointer;
+	cursor: pointer;
 }
 
 .footer-under {
