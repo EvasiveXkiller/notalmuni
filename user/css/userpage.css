@@ -110,7 +110,7 @@ button:hover {
 	background-color: rgba(0, 0, 0, 0.719);
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1600px) {
 	.information-flexbox > div {
 		max-width: 500px;
 		min-width: 500px;
