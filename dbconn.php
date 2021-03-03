@@ -1,6 +1,6 @@
 <?php
 
-$servaddress = "localhost:3306";
+$servaddress = "127.0.0.1:3306"; // ! Changing this to localhost slows down the access aloat
 $username = "root";
 $password = "12345";
 $remotedbname  = "almuni";
