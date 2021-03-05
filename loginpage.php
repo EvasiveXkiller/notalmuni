@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/loginpage.css" />
 </head>
 
-<body class="body">
+<body>
     <div class="topbar">
         <p><span class="alumnicrm">ALUMNI CRM</span><b class="welcometoalumni">Welcome to Almuni!</b><span id="clock" class="clock"></span></p>
 
