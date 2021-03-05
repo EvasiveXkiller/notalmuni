@@ -6,7 +6,7 @@
 		<title>Almuni CRM</title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="css/homepage.css" />
+		<link rel="stylesheet" href="./css/homepage.css" />
         <script src="index.js" defer></script>
 	</head>
 
@@ -14,9 +14,9 @@
 		<div class="topbar">
 			<a class="logo">Almuni CRM</a>
 			<div class="topbar-right">
-				<a class="active" href="homepage.html">Home</a>
+				<a class="active" href="">Home</a>
 				<a href="loginpage.php">Login</a>
-				<a href="aboutus.html">About</a>
+				<a href="aboutus.php">About</a>
 			</div>
 		</div>
         <div class="intro-container">
@@ -63,11 +63,11 @@
                 <div>
                     New User?
                 </div>
-                <div><button class="redirect" onclick="redirect()">Register Now</button></div>
+                <div><button class="redirect" onclick="redirectToSignup()">Register Now</button></div>
                 <div>
                     Existing User?
                 </div>
-                <div><button class="redirect" onclick="redirect()">Login</button></div>
+                <div><button class="redirect" onclick="redirectToLogin()">Login</button></div>
             </div>
             </div>
         </div>

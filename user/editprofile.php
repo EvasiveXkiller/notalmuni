@@ -45,9 +45,9 @@ $data = mysqli_fetch_assoc($result);
 				<a href="dashboard.php">Dashboard</a>
 				<a href="viewprofile.php">View Profile</a>
 				<a href="" class="navactive">Edit Profile</a>
-				<a href="#">About Us</a>
+				<a href="aboutus.php">About Us</a>
 				<a href="#">Licenses</a>
-				<a href="#">Logout</a>
+				<a href="./logout.php">Logout</a>
 			</div>
 		</div>
 		<div class="main_content">

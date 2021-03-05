@@ -1,0 +1,173 @@
+:root {
+	--cardgrey : #6161617e;
+	--cardhovershadow : rgba(0, 0, 0, 0.692);
+	--titlecolor : white;
+	--titleshadow : 0px 2px 3px #000000;
+	--titlethick : 500;
+	--fonts : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+	margin: 0;
+	text-rendering: optimizeLegibility;
+}
+body {
+	background-image: url("../../assets/spolight.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+.viewport {
+	display: flex;
+	position: relative;
+}
+.viewport .sidebar {
+	width: 200px;
+	height: 100%;
+	background-color: rgb(31, 31, 31, 0.9);
+	padding: 30px 0px;
+	position: fixed;
+}
+
+.viewport .sidebar h2 {
+	color: #ffffff;
+	text-align: center;
+	margin-bottom: 50px;
+	font-family: var(--fonts);
+	font-weight: 200;
+}
+
+.viewport .sidebar a {
+	padding: 10px 8px 8px 30px;
+	text-decoration: none;
+	color: #ffffff;
+	display: block;
+	margin-bottom: 10px;
+	font-family: var(--fonts);
+}
+.viewport .sidebar a:hover {
+	background-color: azure;
+	transition: background-color 0.2s;
+	color: black;
+}
+
+.viewport .sidebar .navactive {
+	background-color: rgb(80, 80, 80);
+}
+
+.viewport .main_content {
+	width: 100%;
+	height: 100vh;
+	margin-left: 200px;
+}
+
+.viewport .main_content .header {
+	padding: 20px;
+	background-color: rgba(51, 51, 51, 0.7);
+	color: #717171;
+}
+
+.viewport .main_content .header span {
+	color: #ffffff;
+	text-align: center;
+	text-decoration: none;
+	font-size: 17px;
+	font-family: var(--fonts);
+	font-weight: 200;
+}
+.heading {
+	display: grid;
+	place-items: center;
+	padding: 16px;
+	font-weight: 350;
+	margin: 10px;
+	padding: 20px;
+	font-size: 35px;
+	text-shadow: 0 0 2px inherit;
+	font-family: var(--fonts);
+	font-size: 350;
+	text-align: center;
+    color:white;
+}
+
+.bodyparent {
+	display: grid;
+	place-items: center;
+}
+.bodymain {
+	background-color: rgba(51, 51, 51, 0.7);
+	transition: all 0.5s;
+	transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+	width: 85%;
+}
+.bodymain:hover {
+	background-color: rgba(51, 51, 51, 0.877);
+	transition: all 0.5s;
+	transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1)
+}
+
+.imagewrapper {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.mission{
+	margin: auto;
+	width:clamp(23ch, 70%, 200ch);
+}
+
+.image {
+	padding: 3rem;
+}
+
+.container {
+	font-family: var(--fonts);
+	color: white;
+	text-align: center;
+	letter-spacing: 0.19ch;
+}
+.content {
+	margin-top: 2rem;
+}
+
+.content > div {
+	font-family: var(--fonts);
+	font-weight: 350;
+	font-size: 20px;
+	text-shadow: 0 0 2px inherit;
+	color: #ffffff;
+	text-align: center;
+	padding: 1rem;
+}
+
+.bottom {
+	text-align: center;
+	display: grid;
+	place-items: center;
+}
+.contactwrapper{
+	display: grid;
+	place-items: left;
+	align-items: center;
+	grid-template-columns: 10% 90%;
+}
+
+.contactwrapper > div {
+	padding: 0.6rem;
+}
+
+.fa{
+	padding-top: 7px;
+}
+
+.icon_text {
+	color: #ffffff;
+	font-size: 100;
+	margin: 10px;
+	text-align: left;
+}

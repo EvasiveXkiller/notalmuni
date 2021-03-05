@@ -81,7 +81,7 @@ a {
 }
 
 .intro-container {
-	background-image: url("../../assets/spolight.jpg");
+	background-image: url("../assets/spolight.jpg");
 	position: relative;
 	color: white;
 	display: grid;

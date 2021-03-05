@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -15,14 +11,12 @@
 	</head>
 	<body>
 		<div class="viewport">
-			<div class="sidebar">
-				<h2>ALMUNI CRM</h2>
-				<div class="nav">
-					<a href="#">Dashboard</a>
-					<a href="#">View Profile</a>
-					<a href="#">Edit Profile</a>
-					<a href="#" class="navactive">About Us</a>
-					<a href="#">Logout</a>
+			<div class="topbar">
+				<a class="logo">Almuni CRM</a>
+				<div class="topbar-right">
+					<a href="index.php">Home</a>
+					<a href="loginpage.php">Login</a>
+					<a class="active" href="">About</a>
 				</div>
 			</div>
 			<div class="main_content">
@@ -141,6 +135,27 @@
 						</div>
 					</div>
 				</div>
+				<footer class="footer-under">
+                <div class="footer-container">
+                    <div class="foot-lists">
+                        <div class="foot-list">
+                            <div class="footer-list-item"><i>WEDGE</i> &copy; All Rights Reserved 2021</div>
+                            <div class="footer-list-item"></div>
+                            <div class="footer-list-item">Illegal copying is prohibited without the consent of the author and related parties</div>
+                        </div>
+                    </div>
+                    <div class="foot-lists">
+                        <div class="foot-list">
+                            <div class="footer-list-item"><a href="mailto:someone@gmail.com" style="color: white;">Email</a>
+                                <span>&nbsp; • &nbsp;</span>
+                                <a style="color: white;">Does Nothing</a>
+                                <span>&nbsp; • &nbsp;</span>
+                                <a style="color: white;">Jack's Instagram</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          </footer>
 			</div>
 		</div>
 	</body>

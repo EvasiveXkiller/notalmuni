@@ -43,10 +43,10 @@ class TxtRotate {
 }
 
 function redirectToSignup(){
-
+    window.location.href = "./registerpage.php"
 }
 function redirectToLogin(){
-    
+    window.location.href = "./loginpage.php"
 }
 
 window.addEventListener("load",() => {
