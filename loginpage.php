@@ -16,7 +16,7 @@
     <div class="formbox">
         <form action="loginprocessor.php" method="POST">
             <div class="form">
-                <img src="assets/spolight.jpg" class="picture"><br>
+                <img src="assets/collegestudent4.jpg" class="picture"><br>
                 <label class="switch">
                     <input type="checkbox" id="togBtn">
                     <div class="slider round"></div>
@@ -29,7 +29,7 @@
                     <input type="password" class="form__field" placeholder="Password" name="pword" id='pword' required />
                     <label for="pword" class="form__label">Password</label>
                 </div>
-                <p class="forgotpassword"><a href="resetpasswordpage.html" style="text-decoration: none; color:#40736E">Forgot password?</a></p>
+                <p class="forgotpassword"><a href="resetpasswordpage.php" style="text-decoration: none; color:#40736E">Forgot password?</a></p>
             </div>
             <div class="buttons">
                 <input type="submit" class="loginbutton" style="height:30px;" value="Login" name="login"></input><br>
