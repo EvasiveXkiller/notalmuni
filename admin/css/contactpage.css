@@ -10,18 +10,15 @@
     font-family: var(--fonts)
 }
 .table{
-    display:flex;
+    min-width:90%;
+    margin-left:5%;
+    margin-top:2.5%;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border-collapse: collapse;
 }
-.tabletitle{
-    display:flex;
-    flex-direction: column;
-    border:5px;
-    justify-content:space-between;
-    background-color: white;
-    min-width: 120px;
-    text-align:center;
-    border:solid;
-    border-color:black;
-    border-width:1px;
+td{
+    border:1px solid black;
 }
+
 
