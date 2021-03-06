@@ -83,3 +83,10 @@ select {
 	color: #000000;
 	padding: 15px;
 }
+
+.error{
+	color :red;
+	font-size: 1rem;
+	font-weight: 600;
+	text-shadow: var(--titleshadow);
+}

@@ -4,24 +4,58 @@ include("session.php");
 include("../dbconn.php");
 
 $success = "";
+$errors = array("name" => "", "email" => "", "identity" => "", "maincontact" => "", "officecontact" => "", "homecontact" => "");
 if (isset($_POST["save"])) {
+	// * gets all the data
 	$uid = $_SESSION["ID"];
 	$name = mysqli_real_escape_string($conn, $_POST["username"]);
 	$email = mysqli_real_escape_string($conn, $_POST["email"]);
-	$identity = mysqli_real_escape_string($conn, $_POST["identity"]);
+	$identity = mysqli_real_escape_string($conn, $_POST["identity"]) ?? null;
 	$gender = mysqli_real_escape_string($conn, $_POST["gender"]);
-	$dob = mysqli_real_escape_string($conn, $_POST["dob"]);
+	$dob = mysqli_real_escape_string($conn, $_POST["dob"]) ?? null;
 	$maincontact = mysqli_real_escape_string($conn, $_POST["maincontact"]);
 	$officecontact = mysqli_real_escape_string($conn, $_POST["officecontact"]);
 	$homecontact = mysqli_real_escape_string($conn, $_POST["homecontact"]);
-	$location = mysqli_real_escape_string($conn, $_POST["location"]);
-	$notes = mysqli_real_escape_string($conn, $_POST["notes"]);
+	$location = mysqli_real_escape_string($conn, $_POST["location"]) ?? null;
+	$notes = mysqli_real_escape_string($conn, $_POST["notes"]) ?? null;
 
-	$sql = "UPDATE `users` SET `username` = '$name', `user_email` = '$email', `user_identity` = '$identity', `user_address` = '$location', `user_gender` = '$gender', `user_DOB` = '$dob', `main_contact` = '$maincontact', `home_contact` = '$homecontact', `office_contact` = '$officecontact', `user_notes` = '$notes' WHERE `users`.`user_ID` = '$uid'";
+	if (empty($name)) {
+		$errors["name"] = "Username is required!";
+	} else {
+		if ($name != $_SESSION["uname"]) {
+			// * check if username is taken
+			$sql = "SELECT * FROM `users` WHERE username='$name'";
+			$result = mysqli_query($conn, $sql);
+			if (mysqli_num_rows($result) > 0) { // * username has been taken
+				$errors["name"] = "Username has been taken by another user!";
+			}
+		}
+	}
+	if (empty($email)) {
+		$errors["email"] = "Email cannot be empty!";
+	} else {
+		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			$errors["email"] = "Email format is invalid. Example: johndoe@mail.com";
+		}
+	}
+	if (!preg_match("/\+60\d{9,10}$/i", $maincontact)) { // * +60123456789
+		$errors["maincontact"] = "mainContact is wrong";
+	}
+	if (!preg_match("/\d{2}(\-)\d{8}$/i", $homecontact)) { // * 03-12345678(8 numbers only)
+		$errors["homecontact"] = "homeContact is wrong";
+	}
+	if (!preg_match("/\d{2}(\-)\d{8}(\,)\d{2,4}$/", $officecontact)) { // * 03-12345678,1029(up to 4 numbers)
+		$errors["officecontact"] = "officeContact is wrong";
+	}
 
-	$result = mysqli_query($conn, $sql);
-	if ($result) {
-		$success = "success";
+	if (!array_filter($errors)) {
+		$sql = "UPDATE `users` SET `username` = '$name', `user_email` = '$email', `user_identity` = '$identity', `user_address` = '$location', `user_gender` = '$gender', `user_DOB` = '$dob', `main_contact` = '$maincontact', `home_contact` = '$homecontact', `office_contact` = '$officecontact', `user_notes` = '$notes' WHERE `users`.`user_ID` = '$uid'";
+		$result = mysqli_query($conn, $sql);
+		if ($result) {
+			$success = "success";
+		} else {
+			$success = "failed";
+		}
 	} else {
 		$success = "failed";
 	}
@@ -68,7 +102,7 @@ $data = mysqli_fetch_assoc($result);
 						}
 						if ($success === "failed") {
 						?>
-							<small style="color: red;">Something went wrong!</small>
+							<small style="color: red;">Something went wrong! Please see below for error</small>
 						<?php
 						}
 
@@ -87,6 +121,7 @@ $data = mysqli_fetch_assoc($result);
 									</td>
 									<td class="data">
 										<input type="text" value="<?= $data["username"] ?>" placeholder="John Doe" name="username" required />
+										<div class="error"><?= $errors["name"] ?></div>
 									</td>
 								</tr>
 								<tr>
@@ -95,6 +130,7 @@ $data = mysqli_fetch_assoc($result);
 									</td>
 									<td class="data">
 										<input type="email" value="<?= $data["user_email"] ?>" placeholder="someone@gmail.com" name="email" />
+										<div class="error"><?= $errors["email"] ?></div>
 									</td>
 								</tr>
 								<tr>
@@ -156,7 +192,8 @@ $data = mysqli_fetch_assoc($result);
 										<label>Main Contact</label>
 									</td>
 									<td class="data">
-										<input type="tel" id="phone" name="maincontact" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="012-345-6789" value="<?= $data["main_contact"] ?>" required />
+										<input type="text" id="phone" name="maincontact" placeholder="+60123456789" value="<?= $data["main_contact"] ?>" required />
+										<div class="error"><?= $errors["maincontact"] ?></div>
 									</td>
 								</tr>
 								<tr>
@@ -164,7 +201,8 @@ $data = mysqli_fetch_assoc($result);
 										<label>Home</label>
 									</td>
 									<td class="data">
-										<input type="tel" id="phone" name="homecontact" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="012-345-6789" value="<?= $data["home_contact"] ?>" required />
+										<input type="text" id="phone" name="homecontact" placeholder="03-12345678" value="<?= $data["home_contact"] ?>" required />
+										<div class="error"><?= $errors["homecontact"] ?></div>
 									</td>
 								</tr>
 								<tr>
@@ -172,7 +210,8 @@ $data = mysqli_fetch_assoc($result);
 										<label>Office</label>
 									</td>
 									<td class="data">
-										<input type="tel" id="phone" name="officecontact" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="012-345-6789" value="<?= $data["office_contact"] ?>" required />
+										<input type="text" id="phone" name="officecontact" placeholder="012-345-6789" value="<?= $data["office_contact"] ?>" required />
+										<div class="error"><?= $errors["officecontact"] ?></div>
 									</td>
 								</tr>
 								<tr>
