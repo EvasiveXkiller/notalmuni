@@ -1,0 +1,70 @@
+:root {
+	--cardgrey : #6161617e;
+	--cardhovershadow : rgba(0, 0, 0, 0.692);
+	--titlecolor : white;
+	--titleshadow : 0px 2px 3px #000000;
+	--titlethick : 500;
+	--fonts : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+*{
+    font-family: var(--fonts)
+}
+.table{
+    min-width:98%;
+    margin-left:1%;
+    margin-top:1%;
+    text-align: center;
+    background-color: rgba(71, 71, 71, 0.829);
+    border-collapse: collapse;
+    color:white;
+}
+td{
+    
+    font-size:auto;
+}
+tr:hover {
+	background-color: inherit;
+}
+
+.grid-container{
+    display: grid;
+	justify-content: flex-start;
+	align-self: center;
+    grid-template-columns: auto auto;
+	margin:0.5rem;
+	max-width: max-content;
+	background-color: var(--cardgrey);
+	color: var(--titlecolor);
+	gap: 0.5rem;
+	padding:1rem;
+}
+label {
+	padding:0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="submit"] {
+	background: rgba(255, 255, 255, 0.3);
+	border: none;
+	font-size: 16px;
+	height: auto;
+	margin: 0;
+	outline: 0;
+	padding: 15px;
+	background-color: #d3d3d3;
+	color: black;
+	width: 70%;
+}
+
+.grid-container > input[type="submit"],input[type="number"]{
+	width: initial;
+}

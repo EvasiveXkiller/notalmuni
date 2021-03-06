@@ -17,7 +17,8 @@
 				<h2>ALMUNI CRM</h2>
 				<div class="nav">
 					<a href="admindashboard.html">Dashboard</a>
-					<a href="contactpage.html" class="navactive">View Contacts</a>
+					<a href="contactpage.php" class="navactive">View Contacts</a>
+					<a href="editcontactpage.php">Edit Contacts</a>
 					<a href="#">About Us</a>
 					<a href="#">Licenses</a>
 					<a href="#">Logout</a>
