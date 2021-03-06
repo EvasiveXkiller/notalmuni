@@ -86,6 +86,7 @@
 						window.addEventListener("load", () => {
 							mainwait();
 						})
+
 						function sleep(time) {
 							return new Promise((func) => setTimeout(func, time));
 						}
@@ -97,6 +98,14 @@
 							window.location.href = "./loginpage.php"
 						}
 					</script>
+				<?php
+				} else if ($_GET["status"] === "error") {
+				?>
+					<style>
+						input[type="email"]:invalid {
+							border-bottom: 2px solid #ff0000;
+						}
+					</style>
 			<?php
 				}
 			}
