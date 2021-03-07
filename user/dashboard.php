@@ -36,13 +36,13 @@ include("../dbconn.php");
 				</div>
 			</div>
 			<div class="homeflex-container">
-				<a href="viewprofile.html" class="card">
+				<a href="viewprofile.php" class="card">
 					<div class="container">
 						<h4><b>View Information</b></h4>
 						<small>View Your Information Here</small>
 					</div>
 				</a>
-				<a href="editprofile.html" class="card">
+				<a href="editprofile.php" class="card">
 					<div class="container">
 						<h4><b>Update Information</b></h4>
 						<small>Update Your Information Here</small>
@@ -83,17 +83,10 @@ include("../dbconn.php");
 				<div>Information</div>
 			</div>
 			<div class="homeflex-container" style="padding-top: 0px; padding-bottom: 0px">
-				<a href="viewprofile.html" class="card">
+				<a href="viewprofile.php" class="card">
 					<div class="container">
 						<h4><b>About Us</b></h4>
-						<small>Learn how we process your data and use
-							it</small>
-					</div>
-				</a>
-				<a href="editprofile.html" class="card">
-					<div class="container">
-						<h4><b>Licenses</b></h4>
-						<small>Open Souce Libraries that we use</small>
+						<small>Learn more about us and what our vision is</small>
 					</div>
 				</a>
 			</div>

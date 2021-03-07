@@ -48,11 +48,10 @@ include("session.php");
 			</div>
 		</div>
 		<div class="homeflex-container" style="padding-top: 0px; padding-bottom: 0px">
-			<a href="contactpage.html" class="card">
+			<a href="aboutus.php" class="card">
 				<div class="container">
 					<h4><b>View Contacts</b></h4>
-					<small>Learn how we process your data and use
-						it</small>
+					<small>Learn more about us and what our vision is</small>
 				</div>
 			</a>
 		</div>
