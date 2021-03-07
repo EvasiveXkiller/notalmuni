@@ -14,9 +14,10 @@ include("session.php")
 			<h2>ALMUNI CRM</h2>
 			<div class="nav">
 				<a href="admindashboard.php">Dashboard</a>
-				<a href="viewprofile.php">View Contacts</a>
-				<a href="#" class="navactive">Annoucements</a>
-				<a href="#">About Us</a>
+				<a href="contactpage.php">View Contacts</a>
+				<a href="editcontactpage.php">Edit Contacts</a>
+				<a href="annoucements.php" class="navactive">Annoucements</a>
+				<a href="../aboutus.php">About Us</a>
 				<a href="#">Licenses</a>
 				<a href="logout.php">Logout</a>
 			</div>

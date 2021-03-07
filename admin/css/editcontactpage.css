@@ -9,7 +9,8 @@
 *{
     font-family: var(--fonts)
 }
-.table{
+
+table{
     min-width:98%;
     margin-left:1%;
     margin-top:1%;
@@ -52,7 +53,7 @@ input[type="search"],
 input[type="tel"],
 input[type="time"],
 input[type="url"],
-input[type="submit"] {
+select {
 	background: rgba(255, 255, 255, 0.3);
 	border: none;
 	font-size: 16px;
@@ -62,9 +63,53 @@ input[type="submit"] {
 	padding: 15px;
 	background-color: #d3d3d3;
 	color: black;
-	width: 70%;
+	width: 95%;
 }
 
 .grid-container > input[type="submit"],input[type="number"]{
 	width: initial;
+	background: rgba(255, 255, 255, 0.3);
+	border: none;
+	font-size: 16px;
+	height: auto;
+	margin: 0;
+	outline: 0;
+	padding: 15px;
+	background-color: #d3d3d3;
+	color: black;
+}
+
+.placecenter {
+	display: grid;
+	place-items: center;
+}
+
+.grid-container2 {
+	background-color: var(--cardgrey);
+	padding: 0.5rem;
+	display: grid;
+	grid-template-columns: max-content auto;
+	grid-template-rows: repeat(11, 1fr);
+	gap: 2rem 2rem;
+	width: 75%;
+	align-items: center;
+	color: white;	
+}
+
+.hover:hover{
+	background-color:aqua;
+	transition: all 0.3s ease-in;
+}
+.hover {
+	transition: all 0.3s ease-in;
+	margin: 0.1rem;
+	width: 49%;
+	background: rgba(255, 255, 255, 0.3);
+	border: none;
+	font-size: 16px;
+	height: auto;
+	outline: 0;
+	padding: 15px;
+	background-color: #d3d3d3;
+	color: black;
 }
