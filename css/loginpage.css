@@ -23,6 +23,17 @@ body {
 	margin: auto;
 }
 
+a {
+	text-decoration: none;
+	color: white;
+	transition: all 0.3s ease-in;
+}
+
+a:hover {
+	color: grey;
+	transition: all 0.3s ease-in;
+}
+
 .formbox {
 	display: flex;
 	background-color: #e7e7e7;

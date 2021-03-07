@@ -50,13 +50,13 @@ if (isset($_POST["save"])) {
 		}
 	}
 	if (!preg_match("/\+60\d{9,10}$/i", $maincontact)) { // * +60123456789
-		$errors["maincontact"] = "mainContact is wrong";
+		$errors["maincontact"] = "mainContact is wrong. Format is +60123456789";
 	}
 	if (!preg_match("/\d{2}(\-)\d{8}$/i", $homecontact)) { // * 03-12345678(8 numbers only)
-		$errors["homecontact"] = "homeContact is wrong";
+		$errors["homecontact"] = "homeContact is wrong. Format is 03-12345678";
 	}
 	if (!preg_match("/\d{2}(\-)\d{8}(\,)\d{2,4}$/", $officecontact)) { // * 03-12345678,1029(up to 4 numbers)
-		$errors["officecontact"] = "officeContact is wrong";
+		$errors["officecontact"] = "officeContact is wrong. Format is 03-12345678,1029";
 	}
 
 	if (!array_filter($errors)) {
@@ -86,7 +86,6 @@ if (isset($_POST["save"])) {
 				<a href="viewprofile.php">View Profile</a>
 				<a href="" class="navactive">Edit Profile</a>
 				<a href="aboutus.php">About Us</a>
-				<a href="#">Licenses</a>
 				<a href="./logout.php">Logout</a>
 			</div>
 		</div>

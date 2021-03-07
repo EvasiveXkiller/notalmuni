@@ -20,8 +20,7 @@
 					<a href="contactpage.php" class="navactive">View Contacts</a>
 					<a href="editcontactpage.php">Edit Contacts</a>
 					<a href="annoucements.php">Announcements</a>
-					<a href="../aboutus.php">About Us</a>
-					<a href="#">Licenses</a>
+					<a href="aboutus.php">About Us</a>
 					<a href="logout.php">Logout</a>
 				</div> 
 			</div>

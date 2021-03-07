@@ -66,8 +66,7 @@ if (isset($_POST["search"])) {  //just to output error messages if it's empty or
 				<a href="contactpage.php">View Contacts</a>
 				<a href="editcontactpage.php" class="navactive">Edit Contacts</a>
 				<a href="annoucements.php">Announcements</a>
-				<a href="../aboutus.php">About Us</a>
-				<a href="#">Licenses</a>
+				<a href="aboutus.php">About Us</a>
 				<a href="logout.php">Logout</a>
 			</div>
 		</div>

@@ -14,7 +14,6 @@
 					<a href="#" class="navactive">View Profile</a>
 					<a href="editprofile.php">Edit Profile</a>
 					<a href="aboutus.php">About Us</a>
-					<a href="#">Licenses</a>
 					<a href="./logout.php">Logout</a>
 				</div>
 			</div>

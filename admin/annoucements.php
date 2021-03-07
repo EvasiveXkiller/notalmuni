@@ -16,9 +16,8 @@ include("session.php")
 				<a href="admindashboard.php">Dashboard</a>
 				<a href="contactpage.php">View Contacts</a>
 				<a href="editcontactpage.php">Edit Contacts</a>
-				<a href="annoucements.php" class="navactive">Annoucements</a>
-				<a href="../aboutus.php">About Us</a>
-				<a href="#">Licenses</a>
+				<a href="annoucements.php" class="navactive">Announcements</a>
+				<a href="aboutus.php">About Us</a>
 				<a href="logout.php">Logout</a>
 			</div>
 		</div>
@@ -31,7 +30,7 @@ include("session.php")
 			<div class="flex-container">
 				<div style="text-shadow: 0px 4px 3px #000000;;">
 					<div>
-						<h2>Annoucements</h2>
+						<h2>Announcements</h2>
 						<button id="addmore" onclick="redirectToAdd()">+</button>
 					</div>
 				</div>

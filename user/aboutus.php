@@ -14,7 +14,6 @@ include("../dbconn.php");
 					<a href="viewprofile.php">View Profile</a>
 					<a href="editprofile.php">Edit Profile</a>
 					<a href="#" class="navactive">About Us</a>
-					<a href="#">Licenses</a>
 					<a href="logout.php">Logout</a>
 				</div>
 			</div>

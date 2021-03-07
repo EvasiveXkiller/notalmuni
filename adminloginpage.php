@@ -9,7 +9,7 @@
 </head>
 <body class="body">
     <div class="topbar">
-        <p><span class="alumnicrm">ALUMNI CRM</span><b class="welcometoalumni">Welcome to Almuni!</b><span id="clock" class="clock"></span></p>
+        <p><span class="alumnicrm"><a href="index.php">ALUMNI CRM</a></span><b class="welcometoalumni">Welcome to Almuni!</b><span id="clock" class="clock"></span></p>
     </div>
     <div class="formbox">
         <form action="adminloginprocessor.php" method="POST">

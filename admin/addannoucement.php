@@ -16,8 +16,7 @@ include("header.php");
 				<a href="admindashboard.php">Dashboard</a>
 				<a href="viewprofile.php">View Contacts</a>
 				<a href="annoucements.php" class="navactive">Annoucements</a>
-				<a href="#">About Us</a>
-				<a href="#">Licenses</a>
+				<a href="aboutus.php">About Us</a>
 				<a href="logout.php">Logout</a>
 			</div>
 		</div>
