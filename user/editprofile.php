@@ -5,6 +5,11 @@ include("../dbconn.php");
 
 $success = "";
 $errors = array("name" => "", "email" => "", "identity" => "", "maincontact" => "", "officecontact" => "", "homecontact" => "");
+
+$sqlstmt = "SELECT * FROM `users` WHERE user_ID='" . $_SESSION['ID'] . "'";
+$result = mysqli_query($conn, $sqlstmt);
+
+$data = mysqli_fetch_assoc($result);
 if (isset($_POST["save"])) {
 	// * gets all the data
 	$uid = $_SESSION["ID"];
@@ -18,6 +23,12 @@ if (isset($_POST["save"])) {
 	$homecontact = mysqli_real_escape_string($conn, $_POST["homecontact"]);
 	$location = mysqli_real_escape_string($conn, $_POST["location"]) ?? null;
 	$notes = mysqli_real_escape_string($conn, $_POST["notes"]) ?? null;
+
+	$data["username"] = $name;
+	$data["user_email"] = $email;
+	$data["main_contact"] = $maincontact;
+	$data["home_contact"] = $homecontact;
+	$data["office_onctact"] = $officecontact;
 
 	if (empty($name)) {
 		$errors["name"] = "Username is required!";
@@ -60,11 +71,6 @@ if (isset($_POST["save"])) {
 		$success = "failed";
 	}
 }
-
-$sqlstmt = "SELECT * FROM `users` WHERE user_ID='" . $_SESSION['ID'] . "'";
-$result = mysqli_query($conn, $sqlstmt);
-
-$data = mysqli_fetch_assoc($result);
 ?>
 <link rel="stylesheet" href="./css/master.css" />
 <link rel="stylesheet" href="./css/editprofile.css" />
