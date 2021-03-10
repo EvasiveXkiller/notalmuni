@@ -6,8 +6,6 @@
 
 // * converter to verify data is polished
 
-use Twig\NodeVisitor\SafeAnalysisNodeVisitor;
-
 function safe_converter($data)
 {
     $data = trim($data);

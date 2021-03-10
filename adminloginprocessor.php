@@ -5,8 +5,7 @@
     session_start();
 
     if(!isset($_POST["login"])) {
-        //header("location:./loginpage.php");
-        echo "illegal origin";
+        header("location:./adminloginpage.php");
     }
     print_r($_POST);
     if($_SERVER["REQUEST_METHOD"] == "POST") {

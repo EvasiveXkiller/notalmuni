@@ -35,7 +35,7 @@
                 <input type="submit" class="loginbutton" style="height:30px;" value="Login" name="login"></input><br>
             </div>
             <br>
-            <p style="text-align:center"> Not a user? <a href="registerpage.php">Register here!</a></p><br>
+            <p style="text-align:center"> Not a user? <a href="registerpage.php" style="color: unset; text-decoration: underline;">Register here!</a></p><br>
             <p style="font-size:10px; text-align:center;"> <i>WEDGE</i> &copy All Rights Reserved</p>
         </form>
     </div>

@@ -256,3 +256,10 @@ input:checked + .slider:after
 {  
   content:'Admin';
 }
+.errors {
+	padding: 0.2rem;
+	color: rgb(255, 89, 89);
+}
+.error {
+	border-bottom: 2px solid rgb(255, 89, 89);
+}

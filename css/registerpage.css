@@ -10,6 +10,7 @@
 	font-family: var(--fonts);
 	margin: 0;
 	padding: 0;
+	text-rendering: optimizeLegibility;
 }
 
 body {
@@ -224,7 +225,14 @@ form {
 	position: relative;
 	left: 2%;
 }
-/** use for field error
-/* input[type="email"]:invalid {
+
+input[type="email"]:invalid {
 	border-bottom: 2px solid #ff0000;
-} */
+}
+.errors {
+	padding: 0.2rem;
+	color: rgb(255, 89, 89);
+}
+.error {
+	border-bottom: 2px solid rgb(255, 89, 89);
+}
