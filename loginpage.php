@@ -3,7 +3,8 @@ include("dbconn.php");
 include("processor.php");
 session_start();
 
-$name = $password = ""; //this is needed to avoid undefined error
+$name = $password = $wrongpassword = ""; //this is needed to avoid undefined error
+$loginerror = array('password' => "", 'username' => "");
 $errors = array('name' => "", 'password' => ""); //associative array
 
 if (isset($_POST['login'])) {
@@ -26,6 +27,7 @@ if (isset($_POST['login'])) {
         $result = mysqli_query($conn, $sqlstmt);
         $resultCheck = mysqli_num_rows($result);
         if ($resultCheck != 1) {
+            $loginerror['username']="Wrong username!";
             echo "Error";
         }
         $output = mysqli_fetch_assoc($result);
@@ -37,6 +39,7 @@ if (isset($_POST['login'])) {
             $_SESSION["ID"] = $output["user_ID"];
             header("location:./user/dashboard.php");
         } else {
+            $loginerror['password']="Wrong password!";
             header("location:./loginpage.php?state=err");
         }
     }
@@ -70,12 +73,14 @@ if (isset($_POST['login'])) {
                     <input type="input" class="form__field" placeholder="Name" name="username" id='name' />
                     <label for="name" class="form__label">Name</label>
                     <div style="color:red;"><?php echo $errors['name'] ?></div>
+                    <div style="color:red;"><?php echo $loginerror['username'] ?></div>
                 </div>
 
                 <div class="form__group field">
                     <input type="password" class="form__field" placeholder="Password" name="pword" id='pword' />
                     <label for="pword" class="form__label">Password</label>
                     <div style="color:red;"><?php echo $errors['password'] ?></div>
+                    <div style="color:red;"><?php echo $loginerror['password'] ?></div>
                 </div>
 
                 <p class="forgotpassword"><a href="resetpasswordpage.php" style="text-decoration: none; color:#40736E">Forgot password?</a></p>
