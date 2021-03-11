@@ -1,55 +1,47 @@
 <?php
-    include("dbconn.php");
-    include("processor.php");
+include("dbconn.php");
+include("processor.php");
+session_start();
 
-    session_start();
+$name = $password = ""; //this is needed to avoid undefined error
+$errors = array('name' => "", 'password' => ""); //associative array
 
-    if(!isset($_POST["login"])) {
-        //header("location:./loginpage.php");
-        echo "illegal origin";
+if (isset($_POST['login'])) {
+    if (empty($_POST['username'])) {
+        $errors['name'] = "Username is required";
+    } else {
+        $name = $_POST['name'];
     }
-    if($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST['pword'])) {
+        $errors['password'] = "Password is required";
+    } else {
+        $password = $_POST['password'];
+    }
+    if (!array_filter($errors)) {
         $username = safe_converter($_POST["username"]);
         $password = safe_converter($_POST["pword"]);
 
-        $sqlstmt = "SELECT * FROM `users` WHERE username='" . $username. "'";
+        $sqlstmt = "SELECT * FROM `users` WHERE username='" . $username . "'";
 
         $result = mysqli_query($conn, $sqlstmt);
         $resultCheck = mysqli_num_rows($result);
-        if($resultCheck != 1) {
-           echo "Error";
+        if ($resultCheck != 1) {
+            echo "Error";
         }
         $output = mysqli_fetch_assoc($result);
-        if($output["status_"] === "pending") {
+        if ($output["status_"] === "pending") {
             header("location:./loginpage.php?state=pending");
             exit(0);
         }
-        if(password_verify($password, $output["user_password"])) {
+        if (password_verify($password, $output["user_password"])) {
             $_SESSION["ID"] = $output["user_ID"];
             header("location:./user/dashboard.php");
         } else {
             header("location:./loginpage.php?state=err");
         }
     }
-
-    $name = $password ="";//this is needed to avoid undefined error
-    $errors = array('name' => "", 'password' => "");//associative array
-        
-    if (isset($_POST['login'])){
-        if (empty($_POST['name'])){
-            $errors['name'] = "Username is required";
-        } 
-        else {
-            $name = $_POST['name'];
-        }
-        if (empty($_POST['password'])){
-            $errors['password'] = "Password is required";
-        }
-        else {
-            $password = $_POST['password'];
-        }
-    }
-    ?>
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -81,7 +73,7 @@
                 </div>
 
                 <div class="form__group field">
-                    <input type="password" class="form__field" placeholder="Password" name="pword" id='pword'  />
+                    <input type="password" class="form__field" placeholder="Password" name="pword" id='pword' />
                     <label for="pword" class="form__label">Password</label>
                     <div style="color:red;"><?php echo $errors['password'] ?></div>
                 </div>
@@ -112,19 +104,19 @@
 
 </html>
 <!-- <?php
-if (isset($_GET["state"])) {
-    if ($_GET["state"] == "err") {
-?>
+        if (isset($_GET["state"])) {
+            if ($_GET["state"] == "err") {
+        ?>
         <script>
             alert("Login Error! Check your information")
         </script>
     <?php
-    } else if ($_GET["state"] == "pending") {
+            } else if ($_GET["state"] == "pending") {
     ?>
         <script>
             alert("Pending for verification. Please wait for admin to approve")
         </script>
 <?php
-    }
-}
+            }
+        }
 ?> -->
