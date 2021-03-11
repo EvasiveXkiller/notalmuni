@@ -65,19 +65,19 @@ if (isset($_POST['reset'])) {
                 <h3 style="text-align:center;">Reset Password</h3>
 
                 <div class="form__group field">
-                    <input type="text" id="resetemail" class="form__field" name="resetname" style="height: 25px" placeholder="John Doe"><br>
+                    <input type="text" id="resetemail" class="form__field <?php echo empty($errors["resetname"]) ? '' : "error" ?>" name="resetname" style="height: 25px" placeholder="John Doe"><br>
                     <label for="resetemail" class="form__label">Username</label>
-                    <div><?php echo $errors['resetname'] ?></div><br>
+                    <div class="errors"><?php echo $errors['resetname'] ?></div><br>
                 </div>
                 <div class="form__group field">
-                    <input type="password" id="resetpword" class="form__field" name="resetpword" placeholder="Reset Password" style="height:25px;"><br>
+                    <input type="password" id="resetpword" class="form__field <?php echo empty($errors["resetpword"]) ? '' : "error" ?>" name="resetpword" placeholder="Reset Password" style="height:25px;"><br>
                     <label for="resetpword" class="form__label">Reset Password</label>
-                    <div><?php echo $errors['resetpword'] ?></div><br>
+                    <div class="errors"><?php echo $errors['resetpword'] ?></div><br>
                 </div>
                 <div class="form__group field">
-                    <input type="password" id="confirmpword" class="form__field" name="confirmpword" placeholder="Confirm Password" style="height:25px;"><br>
+                    <input type="password" id="confirmpword" class="form__field <?php echo empty($errors["confirmpword"]) ? '' : "error" ?>" name="confirmpword" placeholder="Confirm Password" style="height:25px;"><br>
                     <label for="confirmpword" class="form__label">Confirm Password:</label>
-                    <div><?php echo $errors['confirmpword'] ?></div><br>
+                    <div class="errors"><?php echo $errors['confirmpword'] ?></div><br>
                 </div>
             </div><br>
             <div class="buttons">

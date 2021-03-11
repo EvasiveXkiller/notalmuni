@@ -1,46 +1,45 @@
 :root {
-	--cardgrey : #6161617e;
-	--cardhovershadow : rgba(0, 0, 0, 0.692);
-	--titlecolor : white;
-	--titleshadow : 0px 2px 3px #000000;
-	--titlethick : 500;
-	--fonts : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	--cardgrey: #6161617e;
+	--cardhovershadow: rgba(0, 0, 0, 0.692);
+	--titlecolor: white;
+	--titleshadow: 0px 2px 3px #000000;
+	--titlethick: 500;
+	--fonts: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-*{
-    font-family: var(--fonts)
+* {
+	font-family: var(--fonts);
 }
 
-table{
-    min-width:98%;
-    margin-left:1%;
-    margin-top:1%;
-    text-align: center;
-    background-color: rgba(71, 71, 71, 0.829);
-    border-collapse: collapse;
-    color:white;
+table {
+	min-width: 98%;
+	margin-left: 1%;
+	margin-top: 1%;
+	text-align: center;
+	background-color: rgba(71, 71, 71, 0.829);
+	border-collapse: collapse;
+	color: white;
 }
-td{
-    
-    font-size:auto;
+td {
+	font-size: auto;
 }
 tr:hover {
 	background-color: inherit;
 }
 
-.grid-container{
-    display: grid;
+.grid-container {
+	display: grid;
 	justify-content: flex-start;
 	align-self: center;
-    grid-template-columns: auto auto;
-	margin:0.5rem;
+	grid-template-columns: auto auto;
+	margin: 0.5rem;
 	max-width: max-content;
 	background-color: var(--cardgrey);
 	color: var(--titlecolor);
 	gap: 0.5rem;
-	padding:1rem;
+	padding: 1rem;
 }
 label {
-	padding:0;
+	padding: 0;
 }
 
 input[type="text"],
@@ -66,7 +65,8 @@ select {
 	width: 95%;
 }
 
-.grid-container > input[type="submit"],input[type="number"]{
+.grid-container > div > input[type="submit"],
+input[type="number"], input[type="list"] {
 	width: initial;
 	background: rgba(255, 255, 255, 0.3);
 	border: none;
@@ -93,11 +93,11 @@ select {
 	gap: 2rem 2rem;
 	width: 75%;
 	align-items: center;
-	color: white;	
+	color: white;
 }
 
-.hover:hover{
-	background-color:aqua;
+.hover:hover {
+	background-color: aqua;
 	transition: all 0.3s ease-in;
 }
 .hover {
@@ -112,4 +112,7 @@ select {
 	padding: 15px;
 	background-color: #d3d3d3;
 	color: black;
+}
+#inputoverride {
+	width: unset;
 }

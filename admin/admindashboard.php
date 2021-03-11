@@ -48,7 +48,7 @@ include("session.php");
 			</div>
 		</div>
 		<div class="homeflex-container" style="padding-top: 0px; padding-bottom: 0px">
-			<a href="aboutus.php" class="card">
+			<a href="contactpage.php" class="card">
 				<div class="container">
 					<h4><b>View Contacts</b></h4>
 					<small>Learn more about us and what our vision is</small>
@@ -72,13 +72,10 @@ include("session.php");
 		ajax.onreadystatechange = () => {
 			if (ajax.readyState === 4) {
 				let returnObj = JSON.parse(ajax.responseText)
-				console.log(returnObj);
-				console.log(typeof returnObj.pendingscount);
 				document.getElementById("contactssum").innerHTML = returnObj.contactscount.toString();
 				document.getElementById("userssum").innerHTML = returnObj.userscount.toString();
 				document.getElementById("pendingsum").innerHTML = returnObj.pendingscount.toString();
 				document.getElementById("adminssum").innerHTML = returnObj.admincount.toString();
-
 			}
 		};
 		ajax.open("GET", "dashboardprocessor.php?origin=true", true);

@@ -3,7 +3,7 @@ require("../dbconn.php");
 include("session.php");
 include("header.php");
 
-$success = "";
+$success = $querytext = $sql = "";
 if (isset($_POST["update"])) {
 	$username = $_POST["username"];
 	$userid = $_POST["uid"];
@@ -29,7 +29,7 @@ if (isset($_POST["update"])) {
 }
 
 if (isset($_POST["delete"])) {
-	$userid = $_POST["uid"];	
+	$userid = $_POST["uid"];
 	$sql = "DELETE from users WHERE user_ID = '$userid'";
 	$results = mysqli_query($conn, $sql);
 	if ($results) {
@@ -39,16 +39,26 @@ if (isset($_POST["delete"])) {
 	}
 }
 
-if (isset($_POST["search"])) {  //just to output error messages if it's empty or no ID found
-	$id = $_POST["id"];
-	if (!empty($id)) {
-		$sql = "SELECT * from users where user_ID = $id";
-		$results =  (mysqli_query($conn, $sql)); //connects to database and runs the sql query
-		if (mysqli_num_rows($results) == 0) {
-			$success = "ID $id is nonexistent.";
+if (isset($_POST["search"])) {
+	$searchtype = $_POST["searchtype"];  //just to output error messages if it's empty or no ID found
+	$querytext = $_POST["searchbox"];
+	switch ($searchtype) {
+		case "ID":
+			$sql = "SELECT * from users where user_ID = $querytext";
+			break;
+		case "Name":
+			$sql = "SELECT * from users where username = '$querytext'";
+			break;
+	}
+	if (!empty($querytext)) {
+		$results = (mysqli_query($conn, $sql)); //connects to database and runs the sql query
+		if (!$results) {
+			$success = $searchtype == "ID" ? "ID $querytext is non-existent" : "Name $querytext is non-existent";
+		} else if (mysqli_num_rows($results) == 0) {
+			$success = $searchtype == "ID" ? "ID $querytext is non-existent" : "Name $querytext is non-existent";
 		}
 	} else {
-		$success = "You can't search any users if no User ID is provided to search.";
+		$success = "Query text is empty";
 	}
 }
 
@@ -78,19 +88,23 @@ if (isset($_POST["search"])) {  //just to output error messages if it's empty or
 			</div>
 			<form action="editcontactpage.php" method="POST">
 				<div class="grid-container">
-					<div><label for="id">Input the ID you want to edit:</label></div>
-					<div><input type="number" id="id" name="id"></div>
-
-					<label for="search">Click to search and edit:</label>
-					<input type="submit" name="search" value="Search">
+					<div><label for="id">Search by:</label></div>
+					<div><select name="searchtype" style="width: unset;" id="searchtype">
+							<option value="ID">ID</option>
+							<option value="Name">Name</option>
+						</select>
+					</div>
+					<div><label for="id" id="dynamicsearchheading">ID:</label></div>
+					<div id="dynamicsearchbox"><input type="number" name="searchbox"></div>
+					<div><label for="search"></label></div>
+					<div><input type="submit" name="search" value="Search"></div>
+					<div></div>
 					<div><?= $success ?></div>
 				</div>
 			</form>
 			<?php
 			if (isset($_POST["search"])) {  // draws the actual table if the id exists.
-				$id = $_POST["id"];
-				if (!empty($id)) {  //if the textbox is not empty then it prints the table
-					$sql = "SELECT * from users where user_ID = $id";
+				if (!empty($querytext)) {  //if the textbox is not empty then it prints the table
 					$results =  (mysqli_query($conn, $sql)); //connects to database and runs the sql query
 					if (mysqli_num_rows($results) > 0) {
 						while ($row = mysqli_fetch_assoc($results)) {
@@ -159,10 +173,10 @@ if (isset($_POST["search"])) {  //just to output error messages if it's empty or
 											<?php
 											$ok = $pending = "";
 											if ($row["status_"] === "pending") {
-												$ok = "selected";
+												$pending = "selected";
 											}
 											if ($row["status_"] === "ok") {
-												$pending = "selected";
+												$ok = "selected";
 											}
 											?>
 											<option value="ok" <?= $ok ?>>Ok</option>
@@ -182,8 +196,9 @@ if (isset($_POST["search"])) {  //just to output error messages if it's empty or
 			?>
 
 		</div>
-
-		<script src="../clock.js"></script>
+		<script src="../clock.js" defer></script>
+		<script src="./edit.js" defer></script>
+		<datalist id="allnames"></datalist>
 </body>
 
 </html>
