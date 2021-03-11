@@ -4,8 +4,8 @@ include("processor.php");
 session_start();
 
 $name = $password = $wrongpassword = ""; //this is needed to avoid undefined error
-$loginerror = array('password' => "", 'username' => "");
-$errors = array('name' => "", 'password' => ""); //associative array
+$loginerror = array('password' => "", 'username' => "", 'statuspending' => ""); //associative array for errors such as wrong password or username.
+$errors = array('name' => "", 'password' => ""); //associative array for errors such as when no username or password is inputed
 
 if (isset($_POST['login'])) {
     if (empty($_POST['username'])) {
@@ -27,20 +27,22 @@ if (isset($_POST['login'])) {
         $result = mysqli_query($conn, $sqlstmt);
         $resultCheck = mysqli_num_rows($result);
         if ($resultCheck != 1) {
-            $loginerror['username']="Wrong username!";
+            $loginerror['username'] = "Wrong username!";
         } else {
             $output = mysqli_fetch_assoc($result);
             if ($output["status_"] === "pending") {
-                header("location:./loginpage.php?state=pending");
+                // header("location:./loginpage.php?state=pending");
+                $loginerror['statuspending'] = "Your account status is still 'pending' please contact the admin to approve your account to 'ok'.";
                 // * add a pending message here
-            }
-            if (password_verify($password, $output["user_password"])) {
-                $_SESSION["ID"] = $output["user_ID"];
-                header("location:./user/dashboard.php");
             } else {
-                $loginerror['password']="Wrong password!";
-                //header("location:./loginpage.php?state=err");
-                //* header throwing user to another page
+                if (password_verify($password, $output["user_password"])) {
+                    $_SESSION["ID"] = $output["user_ID"];
+                    header("location:./user/dashboard.php");
+                } else {
+                    $loginerror['password'] = "Wrong password!";
+                    //header("location:./loginpage.php?state=err");
+                    //* header throwing user to another page
+                }
             }
         }
     }
@@ -82,7 +84,9 @@ if (isset($_POST['login'])) {
                     <label for="pword" class="form__label">Password</label>
                     <div style="color:red;"><?php echo $errors['password'] ?></div>
                     <div style="color:red;"><?php echo $loginerror['password'] ?></div>
+                    <div style="color:red;"><?php echo $loginerror['statuspending'] ?></div>
                 </div>
+                
 
                 <p class="forgotpassword"><a href="resetpasswordpage.php" style="text-decoration: none; color:#40736E">Forgot password?</a></p>
             </div>
