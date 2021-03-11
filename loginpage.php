@@ -11,12 +11,12 @@ if (isset($_POST['login'])) {
     if (empty($_POST['username'])) {
         $errors['name'] = "Username is required";
     } else {
-        $name = $_POST['name'];
+        $name = $_POST['username'];
     }
     if (empty($_POST['pword'])) {
         $errors['password'] = "Password is required";
     } else {
-        $password = $_POST['password'];
+        $password = $_POST['pword'];
     }
     if (!array_filter($errors)) {
         $username = safe_converter($_POST["username"]);
@@ -28,19 +28,20 @@ if (isset($_POST['login'])) {
         $resultCheck = mysqli_num_rows($result);
         if ($resultCheck != 1) {
             $loginerror['username']="Wrong username!";
-            echo "Error";
-        }
-        $output = mysqli_fetch_assoc($result);
-        if ($output["status_"] === "pending") {
-            header("location:./loginpage.php?state=pending");
-            exit(0);
-        }
-        if (password_verify($password, $output["user_password"])) {
-            $_SESSION["ID"] = $output["user_ID"];
-            header("location:./user/dashboard.php");
         } else {
-            $loginerror['password']="Wrong password!";
-            header("location:./loginpage.php?state=err");
+            $output = mysqli_fetch_assoc($result);
+            if ($output["status_"] === "pending") {
+                header("location:./loginpage.php?state=pending");
+                // * add a pending message here
+            }
+            if (password_verify($password, $output["user_password"])) {
+                $_SESSION["ID"] = $output["user_ID"];
+                header("location:./user/dashboard.php");
+            } else {
+                $loginerror['password']="Wrong password!";
+                //header("location:./loginpage.php?state=err");
+                //* header throwing user to another page
+            }
         }
     }
 }
