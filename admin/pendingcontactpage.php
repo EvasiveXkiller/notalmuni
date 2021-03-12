@@ -33,8 +33,10 @@ $usertablecheck = mysqli_num_rows($usertableresult);
 				</span>
 				<span id="clock" style="float: right"></span>
 			</div>
+            <form>
             <table class="table">
 				<tr class="hover">
+                    <td>Checkbox</td>
 					<td>Username</td>
 					<td>UserID</td>
 					<td>UserEmail</td>
@@ -53,7 +55,8 @@ $usertablecheck = mysqli_num_rows($usertableresult);
 				{
 					while ($row = mysqli_fetch_assoc($usertableresult)) {   // runs through the results    //fetches array of data from database
 				?>
-						<tr class="hover">
+						    <tr class="hover">
+                            <td><label for ="boxcheck"><input type="checkbox" id="boxcheck" name="boxcheck"></td>
 							<td><?= $row["username"] ?></td>
 							<!--?= only used for printing variables from PHP -->
 							<td><?= $row["user_ID"] ?></td>
@@ -74,6 +77,7 @@ $usertablecheck = mysqli_num_rows($usertableresult);
 				?>
 
 			</table>
+            </form>
                 <script src="../clock.js"></script>
                 </body>
                 </html>
