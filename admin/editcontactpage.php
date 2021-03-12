@@ -116,6 +116,18 @@ if (isset($_POST["search"])) {
 							<div class="placecenter">
 								<form action="editcontactpage.php" method="POST" class="grid-container2">
 
+									<div>Profile Pic</div>
+									<div><?php
+											if ($row["imagepath"] !== null) {
+											?>
+											<img src="../user/<?= $row['imagepath'] ?>" width="auto" height="100">
+										<?php
+											} else {
+												echo "No Profile Picture";
+											}
+										?>
+									</div>
+
 									<div>UserID</div>
 									<div><input type="text" name="uid" value="<?= $row["user_ID"] ?>" readonly /></div>
 

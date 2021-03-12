@@ -36,6 +36,7 @@ $usertablecheck = mysqli_num_rows($usertableresult);   //no. of output results
 				<tr class="hover">
 					<td>Username</td>
 					<td>UserID</td>
+					<td>Profile Pic</td>
 					<td>UserEmail</td>
 					<td>User Identity</td>
 					<td>Address</td>
@@ -56,6 +57,16 @@ $usertablecheck = mysqli_num_rows($usertableresult);   //no. of output results
 							<td><?= $row["username"] ?></td>
 							<!--?= only used for printing variables from PHP -->
 							<td><?= $row["user_ID"] ?></td>
+							<td><?php
+								if ($row["imagepath"] !== null) {
+								?>
+									<img src="../user/<?= $row['imagepath'] ?>" width="auto" height="100">
+								<?php
+								} else {
+									echo "No Image";
+								}
+								?>
+							</td>
 							<td><?= $row["user_email"] ?></td>
 							<td><?= $row["user_identity"] ?></td>
 							<td><?= $row["user_address"] ?></td>

@@ -4,12 +4,14 @@ include("session.php");
 include("../dbconn.php");
 
 $success = "";
-$errors = array("name" => "", "email" => "", "identity" => "", "maincontact" => "", "officecontact" => "", "homecontact" => "");
+$errors = array("name" => "", "email" => "", "identity" => "", "maincontact" => "", "officecontact" => "", "homecontact" => "", "profilepic" => "");
 
 $sqlstmt = "SELECT * FROM `users` WHERE user_ID='" . $_SESSION['ID'] . "'";
 $result = mysqli_query($conn, $sqlstmt);
-
 $data = mysqli_fetch_assoc($result);
+
+$targetDir = "userimages/";
+$uploadStatus = true;
 if (isset($_POST["save"])) {
 	// * gets all the data
 	$uid = $_SESSION["ID"];
@@ -59,8 +61,31 @@ if (isset($_POST["save"])) {
 		$errors["officecontact"] = "officeContact is wrong. Format is 03-12345678,1029";
 	}
 
+	if (!empty($_FILES['profilepic']['tmp_name']) || is_uploaded_file($_FILES['profilepic']['tmp_name'])) {
+		$genFileName = $targetDir . basename($_FILES['profilepic']['name']);
+		$imageExt = strtolower(pathinfo($genFileName, PATHINFO_EXTENSION));
+		$check = getimagesize($_FILES["profilepic"]["tmp_name"]);
+		if ($check == false) {
+			$errors['profilepic'] = "Uploaded file is not an image";
+		} else if ($_FILES["profilepic"]["size"] > 500000) {
+			$errors['profilepic'] = "Image is too large";
+		} else if (
+			$imageExt != "jpg" && $imageExt != "png" && $imageExt != "jpeg"
+			&& $imageExt != "gif"
+		) {
+			$errors['proflepic'] = "Only JPG, PNG, JPEG and GIFs are allowed";
+		}
+	}
+
 	if (!array_filter($errors)) {
-		$sql = "UPDATE `users` SET `username` = '$name', `user_email` = '$email', `user_identity` = '$identity', `user_address` = '$location', `user_gender` = '$gender', `user_DOB` = '$dob', `main_contact` = '$maincontact', `home_contact` = '$homecontact', `office_contact` = '$officecontact', `user_notes` = '$notes' WHERE `users`.`user_ID` = '$uid'";
+		if (!empty($_FILES['profilepic']['tmp_name']) || is_uploaded_file($_FILES['profilepic']['tmp_name'])) {
+			$newname = $_SESSION['ID'] . "." . strtolower(pathinfo($genFileName, PATHINFO_EXTENSION));
+			$genFileName = $targetDir . basename($newname);
+			move_uploaded_file($_FILES['profilepic']['tmp_name'], $genFileName);
+			$sql = "UPDATE `users` SET `username` = '$name', `user_email` = '$email', `user_identity` = '$identity', `user_address` = '$location', `user_gender` = '$gender', `user_DOB` = '$dob', `main_contact` = '$maincontact', `home_contact` = '$homecontact', `office_contact` = '$officecontact', `user_notes` = '$notes' , `imagepath` = '$genFileName' WHERE `users`.`user_ID` = '$uid'";
+		} else {
+			$sql = "UPDATE `users` SET `username` = '$name', `user_email` = '$email', `user_identity` = '$identity', `user_address` = '$location', `user_gender` = '$gender', `user_DOB` = '$dob', `main_contact` = '$maincontact', `home_contact` = '$homecontact', `office_contact` = '$officecontact', `user_notes` = '$notes' WHERE `users`.`user_ID` = '$uid'";
+		}
 		$result = mysqli_query($conn, $sql);
 		if ($result) {
 			$sqlstmt = "SELECT * FROM `users` WHERE user_ID='" . $_SESSION['ID'] . "'";
@@ -98,7 +123,7 @@ if (isset($_POST["save"])) {
 				</span>
 				<span id="clock" style="float: right"></span>
 			</div>
-			<form action="editprofile.php" method="POST">
+			<form action="editprofile.php" method="POST" enctype="multipart/form-data">
 				<div class="flex-container">
 					<div id="pageheader">
 						Edit Info<br /><small>Your Information that you use on Almuni</small><br />
@@ -123,6 +148,25 @@ if (isset($_POST["save"])) {
 										border-collapse: collapse;
 										width: 100%;
 									">
+								<tr>
+									<td class="key">
+										<label>Profile Pic</label>
+									</td>
+									<td class="data">
+
+										<div>
+											<?php
+											if ($data["imagepath"] !== null) {
+											?>
+												<img src="<?= $data['imagepath'] ?>" width="auto" height="100">
+											<?php
+											}
+											?>
+										</div>
+										<input type="file" name="profilepic" id="profilepic">
+										<div class="error"><?= $errors["profilepic"] ?></div>
+									</td>
+								</tr>
 								<tr>
 									<td class="key">
 										<label>Name</label>
