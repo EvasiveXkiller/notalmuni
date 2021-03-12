@@ -82,11 +82,18 @@ if (isset($_POST['reset'])) {
             </div><br>
             <div class="buttons">
                 <input type="submit" class="loginbutton" style="height:30px;" value="Reset" name="reset"></input><br><br>
+                <button class="returnlogin" onclick="redirect()">Sign In Instead</button><br /><br>
             </div>
             <p style="font-size:10px; text-align:center;"> <i>WEDGE</i> &copy All Rights Reserved</p>
         </form>
     </div>
     <script src="clock.js"></script>
+    <script>
+        function redirect() {
+            event.preventDefault()
+            window.location.href = "./loginpage.php"
+        }
+    </script>
 </body>
 
 </html>

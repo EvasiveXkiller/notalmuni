@@ -1,10 +1,10 @@
 :root {
-	--cardgrey : #6161617e;
-	--cardhovershadow : rgba(0, 0, 0, 0.692);
-	--titlecolor : white;
-	--titleshadow : 0px 2px 3px #000000;
-	--titlethick : 500;
-	--fonts : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	--cardgrey: #6161617e;
+	--cardhovershadow: rgba(0, 0, 0, 0.692);
+	--titlecolor: white;
+	--titleshadow: 0px 2px 3px #000000;
+	--titlethick: 500;
+	--fonts: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .flex-container {
 	margin-left: 10%;

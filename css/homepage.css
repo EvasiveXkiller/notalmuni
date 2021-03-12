@@ -179,8 +179,8 @@ a {
 	width: clamp(23ch, 70%, 46ch);
 }
 
-.redirectbar{
-	display:grid;
+.redirectbar {
+	display: grid;
 	grid-auto-flow: column;
 	grid-template-columns: auto auto;
 	grid-template-rows: 1fr 1fr;
@@ -239,7 +239,7 @@ a {
 .foot-list-item {
 	color: rgba(238, 238, 238, 0.8);
 	font-size: 0.8em;
-	padding: 0.5em 0;	
+	padding: 0.5em 0;
 }
 .footer-list-item a {
 	text-decoration: none;

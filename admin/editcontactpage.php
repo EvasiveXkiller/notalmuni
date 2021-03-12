@@ -64,9 +64,10 @@ if (isset($_POST["search"])) {
 
 ?>
 <!DOCTYPE html>
+
 <head>
-<link rel="stylesheet" href="./css/master.css" />
-<link rel="stylesheet" href="./css/editcontactpage.css" />
+	<link rel="stylesheet" href="./css/master.css" />
+	<link rel="stylesheet" href="./css/editcontactpage.css" />
 </head>
 
 <body>

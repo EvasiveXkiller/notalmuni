@@ -70,10 +70,10 @@ input[type="submit"]:hover {
 }
 
 textarea {
-    width: 70%;
+	width: 70%;
 
-    padding: 15px;
-    resize: vertical;
+	padding: 15px;
+	resize: vertical;
 }
 select {
 	font-size: 16px;
@@ -81,12 +81,12 @@ select {
 	padding: 15px;
 }
 button {
-    float: left;
-    margin-left: 20px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+	float: left;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 tr:hover {
-    background-color: inherit;
+	background-color: inherit;
 }

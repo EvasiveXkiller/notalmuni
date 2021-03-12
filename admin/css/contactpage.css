@@ -1,31 +1,30 @@
 :root {
-	--cardgrey : #6161617e;
-	--cardhovershadow : rgba(0, 0, 0, 0.692);
-	--titlecolor : white;
-	--titleshadow : 0px 2px 3px #000000;
-	--titlethick : 500;
-	--fonts : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	--cardgrey: #6161617e;
+	--cardhovershadow: rgba(0, 0, 0, 0.692);
+	--titlecolor: white;
+	--titleshadow: 0px 2px 3px #000000;
+	--titlethick: 500;
+	--fonts: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-*{
-    font-family: var(--fonts)
+* {
+	font-family: var(--fonts);
 }
-.table{
-    min-width:98%;
-    margin-left:1%;
-    margin-top:1%;
-    text-align: center;
-    background-color: rgba(71, 71, 71, 0.829);
-    border-collapse: collapse;
-    color:white;
+.table {
+	min-width: 98%;
+	margin-left: 1%;
+	margin-top: 1%;
+	text-align: center;
+	background-color: rgba(71, 71, 71, 0.829);
+	border-collapse: collapse;
+	color: white;
 }
-td{
-    border:1px solid rgb(53, 53, 53);
-    font-size:auto;
+td {
+	border: 1px solid rgb(53, 53, 53);
+	font-size: auto;
 }
 tr:hover {
 	background-color: inherit;
 }
 .hover:hover {
-    background-color: #2929299f;
+	background-color: #2929299f;
 }
-

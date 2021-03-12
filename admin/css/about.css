@@ -1,10 +1,10 @@
 :root {
-	--cardgrey : #6161617e;
-	--cardhovershadow : rgba(0, 0, 0, 0.692);
-	--titlecolor : white;
-	--titleshadow : 0px 2px 3px #000000;
-	--titlethick : 500;
-	--fonts : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	--cardgrey: #6161617e;
+	--cardhovershadow: rgba(0, 0, 0, 0.692);
+	--titlecolor: white;
+	--titleshadow: 0px 2px 3px #000000;
+	--titlethick: 500;
+	--fonts: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 * {
@@ -91,7 +91,7 @@ a {
 	font-family: var(--fonts);
 	font-size: 350;
 	text-align: center;
-    color:white;
+	color: white;
 }
 
 .bodyparent {
@@ -107,7 +107,7 @@ a {
 .bodymain:hover {
 	background-color: rgba(51, 51, 51, 0.877);
 	transition: all 0.5s;
-	transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1)
+	transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .imagewrapper {
@@ -116,9 +116,9 @@ a {
 	flex-wrap: wrap;
 }
 
-.mission{
+.mission {
 	margin: auto;
-	width:clamp(23ch, 70%, 200ch);
+	width: clamp(23ch, 70%, 200ch);
 }
 
 .image {
@@ -150,7 +150,7 @@ a {
 	display: grid;
 	place-items: center;
 }
-.contactwrapper{
+.contactwrapper {
 	display: grid;
 	place-items: left;
 	align-items: center;
@@ -161,7 +161,7 @@ a {
 	padding: 0.6rem;
 }
 
-.fa{
+.fa {
 	padding-top: 7px;
 }
 

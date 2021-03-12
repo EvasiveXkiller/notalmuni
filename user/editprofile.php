@@ -28,7 +28,7 @@ if (isset($_POST["save"])) {
 	$data["user_email"] = $email;
 	$data["main_contact"] = $maincontact;
 	$data["home_contact"] = $homecontact;
-	$data["office_onctact"] = $officecontact;
+	$data["office_contact"] = $officecontact;
 
 	if (empty($name)) {
 		$errors["name"] = "Username is required!";
@@ -63,6 +63,9 @@ if (isset($_POST["save"])) {
 		$sql = "UPDATE `users` SET `username` = '$name', `user_email` = '$email', `user_identity` = '$identity', `user_address` = '$location', `user_gender` = '$gender', `user_DOB` = '$dob', `main_contact` = '$maincontact', `home_contact` = '$homecontact', `office_contact` = '$officecontact', `user_notes` = '$notes' WHERE `users`.`user_ID` = '$uid'";
 		$result = mysqli_query($conn, $sql);
 		if ($result) {
+			$sqlstmt = "SELECT * FROM `users` WHERE user_ID='" . $_SESSION['ID'] . "'";
+			$result = mysqli_query($conn, $sqlstmt);
+			$data = mysqli_fetch_assoc($result);
 			$success = "success";
 		} else {
 			$success = "failed";

@@ -1,18 +1,18 @@
 <?php
 
 include("../dbconn.php");
-if(!isset($_GET["sort"])) {
+if (!isset($_GET["sort"])) {
     echo "illegal origin";
     header("location:./admindashboard.php");
     exit();
 }
 $sortmethod = "";
 
-switch($_GET["sort"]) {
-    case "IDasc" :
+switch ($_GET["sort"]) {
+    case "IDasc":
         $sortmethod = "annouce_id asc";
         break;
-    case "IDdesc" :
+    case "IDdesc":
         $sortmethod = "annouce_id desc";
         break;
     case "Dateasc":
@@ -27,7 +27,7 @@ switch($_GET["sort"]) {
     case "Titledesc":
         $sortmethod = "annouce_title desc";
         break;
-}       
+}
 
 $selectsql = "SELECT * FROM `annoucements` order by " . $sortmethod;
 $output = mysqli_query($conn, $selectsql);

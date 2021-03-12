@@ -8,6 +8,7 @@ include("../dbconn.php");
 <title>Dashbord | Almuni CRM</title>
 </head>
 <script src="dashboard.js"></script>
+
 <body>
 	<div class="viewport">
 		<div class="sidebar">
@@ -59,23 +60,23 @@ include("../dbconn.php");
 			</div>
 			<div class="information-flexbox" id="annoucements">
 				<?php
-					$selectsql = "SELECT * FROM `annoucements` ORDER BY timestamp_ desc LIMIT 2";
-					$output = mysqli_query($conn, $selectsql);
-					if(mysqli_num_rows($output) > 0) {
-						while($row = mysqli_fetch_assoc($output)) {
-							echo "<div class='messagebox'><div class='messagetitle'>";
-							echo $row['annouce_title'];
-							echo "</div>";
-							echo "<div class='message'>";
-							echo $row['annouce_content'];
-							echo "</div>";
-							echo "<div class='messagefooter'>";
-							echo $row['annouce_author'] . "<br>";
-							echo $row['timestamp_'] . "<br>";
-							echo "</div>";
-							echo "</div>";
-						}
+				$selectsql = "SELECT * FROM `annoucements` ORDER BY timestamp_ desc LIMIT 2";
+				$output = mysqli_query($conn, $selectsql);
+				if (mysqli_num_rows($output) > 0) {
+					while ($row = mysqli_fetch_assoc($output)) {
+						echo "<div class='messagebox'><div class='messagetitle'>";
+						echo $row['annouce_title'];
+						echo "</div>";
+						echo "<div class='message'>";
+						echo $row['annouce_content'];
+						echo "</div>";
+						echo "<div class='messagefooter'>";
+						echo $row['annouce_author'] . "<br>";
+						echo $row['timestamp_'] . "<br>";
+						echo "</div>";
+						echo "</div>";
 					}
+				}
 				?>
 				<button onclick="loadmoreannoucements()">More</button>
 			</div>
@@ -83,7 +84,7 @@ include("../dbconn.php");
 				<div>Information</div>
 			</div>
 			<div class="homeflex-container" style="padding-top: 0px; padding-bottom: 0px">
-				<a href="viewprofile.php" class="card">
+				<a href="aboutus.php" class="card">
 					<div class="container">
 						<h4><b>About Us</b></h4>
 						<small>Learn more about us and what our vision is</small>

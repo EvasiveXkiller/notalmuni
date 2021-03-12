@@ -3,10 +3,10 @@ document.getElementById("searchtype").addEventListener("change", () => {
 	let type = typeselector.options[typeselector.selectedIndex].text;
 	console.log(type);
 	let searchbox = document.getElementById("dynamicsearchbox");
-    let newinput;
+	let newinput;
 	switch (typeselector.selectedIndex) {
 		case 0:
-            newinput = document.createElement("input");
+			newinput = document.createElement("input");
 			document.getElementById("dynamicsearchheading").innerHTML = "ID:";
 			searchbox.innerHTML = "";
 			newinput.setAttribute("type", "number");
@@ -14,14 +14,14 @@ document.getElementById("searchtype").addEventListener("change", () => {
 			searchbox.appendChild(newinput);
 			break;
 		case 1:
-            newinput = null;
-            newinput = document.createElement("input");
-            document.getElementById("dynamicsearchheading").innerHTML = "Name:";
+			newinput = null;
+			newinput = document.createElement("input");
+			document.getElementById("dynamicsearchheading").innerHTML = "Name:";
 			searchbox.innerHTML = "";
 			newinput.setAttribute("type", "text");
 			newinput.setAttribute("name", "searchbox");
-            newinput.setAttribute("id","inputoverride");
-            newinput.setAttribute("list","allnames");
+			newinput.setAttribute("id", "inputoverride");
+			newinput.setAttribute("list", "allnames");
 			searchbox.appendChild(newinput);
 			break;
 	}
