@@ -89,8 +89,8 @@ form {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	border: 1px solid black;
-	backdrop-filter: blur(10px);
+	border: 1px solid rgb(128, 128, 128);
+	background-color: rgba(0, 0, 0, 0.473);
 	border-radius: 10px;
 	align-items: center;
 }
