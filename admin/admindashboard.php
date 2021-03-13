@@ -52,7 +52,7 @@ include("session.php");
 				<a href="contactpage.php" class="card">
 					<div class="container">
 						<h4><b>View Contacts</b></h4>
-						<small>Learn more about us and what our vision is</small>
+						<small>View all contacts that are submitted</small>
 					</div>
 				</a>
 			</div>

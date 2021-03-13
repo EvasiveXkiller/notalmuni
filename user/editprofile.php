@@ -11,7 +11,6 @@ $result = mysqli_query($conn, $sqlstmt);
 $data = mysqli_fetch_assoc($result);
 
 $targetDir = "userimages/";
-$uploadStatus = true;
 if (isset($_POST["save"])) {
 	// * gets all the data
 	$uid = $_SESSION["ID"];
@@ -138,7 +137,6 @@ if (isset($_POST["save"])) {
 							<small style="color: red;">Something went wrong! Please see below for error</small>
 						<?php
 						}
-
 						?>
 					</div>
 					<div>

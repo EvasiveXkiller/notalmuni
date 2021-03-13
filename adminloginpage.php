@@ -63,12 +63,24 @@ if (isset($_POST["login"])) {
                     <div class="slider round"></div>
                 </label>
                 <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="Name" name="adminusername" id='name' />
+                <?php
+                $classadminnameerror = "";
+                    if(!empty($errors["name"]) || !empty($loginerror["name"])) {
+                        $classadminnameerror = "error";
+                    }
+                ?>
+                    <input type="input" class="form__field <?= $classadminnameerror ?>" placeholder="Name" name="adminusername" id='name' />
                     <label for="name" class="form__label">Admin Username</label>
                     <div class="errors"><?= $errors['name'] ?><?= $loginerror['name'] ?></div>
                 </div>
                 <div class="form__group field">
-                    <input type="password" class="form__field" placeholder="Password" name="adminpword" id='pword' />
+                <?php
+                $classadminpworderror = "";
+                    if(!empty($errors["password"]) || !empty($loginerror["password"])) {
+                        $classadminpworderror = "error";
+                    }
+                ?>
+                    <input type="password" class="form__field <?= $classadminpworderror ?>" placeholder="Password" name="adminpword" id='pword' />
                     <label for="pword" class="form__label">Admin Password</label>
                     <div class="errors"><?= $errors['password'] ?><?= $loginerror['password'] ?></div>
                 </div>
