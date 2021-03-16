@@ -68,7 +68,7 @@ if (isset($_POST["Register"])) {
 
 <head>
 	<meta charset="utf-8" />
-	<title>Register Page</title>
+	<title>Register now! | Almuni CRM</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="./css/registerpage.css" />
 </head>
@@ -76,7 +76,7 @@ if (isset($_POST["Register"])) {
 <body>
 	<div class="topbar">
 		<p>
-			<span class="alumnicrm">ALUMNI CRM</span><b class="welcometoalumni">Welcome to Almuni!</b><span id="clock" class="clock"></span>
+			<span class="alumnicrm"><a href="index.php">ALUMNI CRM</a></span><b class="welcometoalumni">Welcome to Almuni!</b><span id="clock" class="clock"></span>
 		</p>
 	</div>
 	<form action="registerpage.php" method="POST">

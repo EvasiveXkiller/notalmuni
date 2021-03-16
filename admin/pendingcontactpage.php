@@ -7,11 +7,10 @@ $sqluser = "SELECT * FROM `users` WHERE status_ = 'pending'  ";
 $usertableresult = mysqli_query($conn, $sqluser);          //connects to database and runs query
 $usertablecheck = mysqli_num_rows($usertableresult);
 ?>
-<!DOCTYPE html>
 
-<head>
 	<link rel="stylesheet" href="./css/master.css" />
 	<link rel="stylesheet" href="./css/pendingcontactpage.css" />
+	<title>Pending Contacts | Almuni CRM</title>
 </head>
 
 <body>
@@ -19,7 +18,7 @@ $usertablecheck = mysqli_num_rows($usertableresult);
 		<div class="sidebar">
 			<h2>ALMUNI CRM</h2>
 			<div class="nav">
-				<a href="admindashboard.php">Dashboard</a>
+			<a href="admindashboard.php">Dashboard</a>
 				<a href="contactpage.php">View Contacts</a>
 				<a href="editcontactpage.php">Edit Contacts</a>
 				<a href="pendingcontactpage.php" class="navactive">Pending Contacts</a>

@@ -4,6 +4,7 @@ include("header.php");
 include("../dbconn.php");
 ?>
 <link rel="stylesheet" href="./css/about.css" />
+<title>About Us | Almuni CRM</title>
 </head>
 
 <body>
@@ -11,11 +12,12 @@ include("../dbconn.php");
 		<div class="sidebar">
 			<h2>ALMUNI CRM</h2>
 			<div class="nav">
-				<a href="admindashboard.php">Dashboard</a>
+			<a href="admindashboard.php">Dashboard</a>
 				<a href="contactpage.php">View Contacts</a>
 				<a href="editcontactpage.php">Edit Contacts</a>
-				<a href="annoucements.php">Annoucements</a>
-				<a href="" class="navactive">About Us</a>
+				<a href="pendingcontactpage.php">Pending Contacts</a>
+				<a href="annoucements.php">Announcements</a>
+				<a href="aboutus.php" class="navactive">About Us</a>
 				<a href="logout.php">Logout</a>
 			</div>
 		</div>

@@ -3,6 +3,7 @@ include("session.php");
 include("header.php");
 include("../dbconn.php");
 ?>
+<title>About Us | Almuni CRM</title>
 <link rel="stylesheet" href="./css/about.css" />
 </head>
 

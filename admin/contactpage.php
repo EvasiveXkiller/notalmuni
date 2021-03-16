@@ -10,6 +10,7 @@ $usertablecheck = mysqli_num_rows($usertableresult);   //no. of output results
 ?>
 <link rel="stylesheet" href="./css/master.css" />
 <link rel="stylesheet" href="./css/contactpage.css" />
+<title>View Contacts | Almuni CRM</title>
 </head>
 
 <body>

@@ -16,6 +16,7 @@ include("session.php")
 				<a href="admindashboard.php">Dashboard</a>
 				<a href="contactpage.php">View Contacts</a>
 				<a href="editcontactpage.php">Edit Contacts</a>
+				<a href="pendingcontactpage.php">Pending Contacts</a>
 				<a href="annoucements.php" class="navactive">Announcements</a>
 				<a href="aboutus.php">About Us</a>
 				<a href="logout.php">Logout</a>

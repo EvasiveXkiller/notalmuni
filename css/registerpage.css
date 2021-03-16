@@ -236,3 +236,12 @@ input[type="email"]:invalid {
 .error {
 	border-bottom: 2px solid rgb(255, 89, 89);
 }
+a {
+	text-decoration: none;
+	color: white;
+	transition: all 0.3s ease-in;
+}
+a:hover {
+	color: grey;
+	transition: all 0.3s ease-in;
+}
