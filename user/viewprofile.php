@@ -1,5 +1,40 @@
 <?php
-include("header.php")
+
+include("header.php");
+include("session.php");
+include("../dbconn.php");
+
+$sqlstmt = "SELECT * FROM `users` WHERE user_ID='" . $_SESSION['ID'] . "'";
+$result = mysqli_query($conn, $sqlstmt);
+
+$data = mysqli_fetch_assoc($result);
+if (isset($_POST["save"])) {
+	// * gets all the data
+	$uid = $_SESSION["ID"];
+	$name = mysqli_real_escape_string($conn, $_POST["username"]);
+	$email = mysqli_real_escape_string($conn, $_POST["email"]);
+	$identity = mysqli_real_escape_string($conn, $_POST["identity"]) ?? null;
+	$gender = mysqli_real_escape_string($conn, $_POST["gender"]);
+	$dob = mysqli_real_escape_string($conn, $_POST["dob"]) ?? null;
+	$password = mysqli_real_escape_string($conn, $_POST["password"]);
+	$maincontact = mysqli_real_escape_string($conn, $_POST["maincontact"]);
+	$officecontact = mysqli_real_escape_string($conn, $_POST["officecontact"]);
+	$homecontact = mysqli_real_escape_string($conn, $_POST["homecontact"]);
+	$location = mysqli_real_escape_string($conn, $_POST["location"]) ?? null;
+	$notes = mysqli_real_escape_string($conn, $_POST["notes"]) ?? null;
+
+	$data["username"] = $name;
+	$data["user_email"] = $email;
+	$data["user_identity"] = $identity;
+	$data["user_gender"] = $gender;
+	$data["user_DOB"] = $dob;
+	$data["user_password"] = $password;
+	$data["main_contact"] = $maincontact;
+	$data["home_contact"] = $homecontact;
+	$data["office_contact"] = $officecontact;
+	$data["user_address"] = $location;
+	$data["user_notes"] = $notes;
+}
 ?>
 <link rel="stylesheet" href="./css/master.css" />
 <link rel="stylesheet" href="./css/viewprofile.css" />
@@ -20,10 +55,11 @@ include("header.php")
 		</div>
 		<div class="main_content">
 			<div class="header">
-				<span id="username" name="uid">Currently Logged In as: [placeholder]
+				<span id="username" name="uid">Currently Logged In as: <?= $data["username"] ?>
 				</span>
 				<span id="clock" style="float: right"></span>
 			</div>
+			
 			<div class="flex-container">
 				<div id="pageheader">
 					Personal Info<br /><small>Your Information that you use on Almuni</small>
@@ -37,7 +73,8 @@ include("header.php")
 									<label>Name</label>
 								</td>
 								<td class="data">
-									<span>[placeholder]</span>
+									<label><?= $data["username"] ?></label>
+										
 								</td>
 							</tr>
 							<tr>
@@ -45,7 +82,7 @@ include("header.php")
 									<label>Email</label>
 								</td>
 								<td class="data">
-									<span>[placeholder]</span>
+									<label><?= $data["user_email"] ?></label>
 								</td>
 							</tr>
 							<tr>
@@ -53,7 +90,7 @@ include("header.php")
 									<label>Identity Number</label>
 								</td>
 								<td class="data">
-									<span>[placeholder]</span>
+								<label><?= $data["user_identity"] ?></label>
 								</td>
 							</tr>
 							<tr>
@@ -61,7 +98,7 @@ include("header.php")
 									<label>Gender</label>
 								</td>
 								<td class="data">
-									<span>[placeholder]</span>
+								<label><?= $data["user_gender"] ?></label>
 								</td>
 							</tr>
 							<tr>
@@ -69,7 +106,7 @@ include("header.php")
 									<label>Date of Birth</label>
 								</td>
 								<td class="data">
-									<span>[placeholder]</span>
+								<label><?= $data["user_DOB"] ?></label>
 								</td>
 							</tr>
 							<tr>
@@ -77,7 +114,7 @@ include("header.php")
 									<label>Password</label>
 								</td>
 								<td class="data">
-									<span>*********</span>
+								<label><?= $data["user_password"] ?></label>
 								</td>
 							</tr>
 						</table>
@@ -92,7 +129,7 @@ include("header.php")
 									<label>Main Contact</label>
 								</td>
 								<td class="data">
-									<span>[placeholder]</span>
+								<label><?= $data["main_contact"] ?></label>
 								</td>
 							</tr>
 							<tr>
@@ -100,7 +137,7 @@ include("header.php")
 									<label>Home</label>
 								</td>
 								<td class="data">
-									<span>[placeholder]</span>
+								<label><?= $data["home_contact"] ?></label>
 								</td>
 							</tr>
 							<tr>
@@ -108,7 +145,7 @@ include("header.php")
 									<label>Office</label>
 								</td>
 								<td class="data">
-									<span>[placeholder]</span>
+								<label><?= $data["office_contact"] ?></label>
 								</td>
 							</tr>
 							<tr>
@@ -116,7 +153,7 @@ include("header.php")
 									<label>Address</label>
 								</td>
 								<td class="data">
-									<span>[placeholder]</span>
+								<label><?= $data["user_address"] ?></label>
 								</td>
 							</tr>
 						</table>
@@ -131,99 +168,7 @@ include("header.php")
 									<label>Notes</label>
 								</td>
 								<td class="data">
-									<span>Lorem ipsum dolor sit amet,
-										consectetur adipiscing elit. Aliquam
-										consequat nisl non aliquam semper.
-										Etiam euismod nisi libero, nec
-										tincidunt leo luctus convallis.
-										Phasellus sed lorem nibh. In a arcu
-										eget enim cursus bibendum.
-										Suspendisse potenti. Aliquam
-										sollicitudin nibh quam, sit amet
-										interdum massa efficitur fermentum.
-										In hac habitasse platea dictumst.
-										Vestibulum quis massa neque. Vivamus
-										vitae porttitor quam. Suspendisse
-										potenti. Aliquam iaculis consectetur
-										nibh quis dignissim. Ut varius lacus
-										nec libero porta auctor. Nunc eget
-										nisl ac mauris accumsan eleifend non
-										ut tortor. Sed interdum, tortor at
-										vehicula convallis, nisl eros
-										hendrerit mi, sed consequat enim
-										turpis ut odio. Maecenas scelerisque
-										massa ac mauris maximus, nec
-										placerat diam scelerisque. Donec
-										placerat molestie orci ut semper.
-										Morbi blandit at dolor vitae
-										interdum. Morbi vitae varius metus.
-										Curabitur placerat neque odio, ac
-										sollicitudin nulla dignissim ut.
-										Maecenas odio eros, congue id
-										euismod fermentum, viverra sit amet
-										urna. Vestibulum quis volutpat nisi.
-										Mauris ipsum nunc, interdum sed
-										pretium ac, ornare rhoncus nunc.
-										Mauris eu turpis neque. Mauris
-										consectetur mollis sollicitudin.
-										Aenean sit amet odio tortor. Sed
-										massa elit, tristique ac efficitur
-										et, ullamcorper id sapien. Vivamus
-										vel quam metus. Sed ultrices nisi a
-										pretium congue. Sed dignissim diam
-										odio, ut egestas dui gravida eu.
-										Integer mattis cursus arcu et
-										ornare. Praesent fringilla purus
-										risus, gravida rutrum neque
-										malesuada eu. Pellentesque porta
-										elementum pulvinar. Duis ut
-										fringilla enim. Donec tincidunt, dui
-										ac lobortis scelerisque, leo augue
-										sagittis velit, non vulputate neque
-										libero hendrerit ante. Vestibulum
-										tincidunt sapien non ultricies
-										cursus. Sed fermentum bibendum diam,
-										vitae finibus erat. Suspendisse
-										vehicula massa ipsum, id mattis
-										neque tincidunt id. Pellentesque
-										porttitor leo risus, in pretium
-										metus lobortis sit amet. Vivamus in
-										felis sed diam volutpat aliquet nec
-										id neque. In rhoncus, felis vitae
-										ullamcorper finibus, ipsum metus
-										sodales ante, mollis semper ipsum
-										augue nec velit. Etiam sagittis,
-										enim vitae ullamcorper facilisis,
-										metus ligula tristique ipsum, non
-										tincidunt justo quam eu libero.
-										Quisque dapibus a quam non tempor.
-										Maecenas augue mauris, vestibulum
-										vel laoreet vitae, fringilla et leo.
-										Proin ac velit erat. In imperdiet et
-										ipsum tincidunt hendrerit. Praesent
-										at odio et nisl viverra porta id
-										ultricies metus. Praesent lobortis
-										metus nec quam pharetra dignissim.
-										Phasellus non urna mattis, eleifend
-										massa vel, elementum odio. Quisque
-										tempus ipsum sed massa cursus, a
-										vulputate turpis posuere. Phasellus
-										congue tellus vitae enim eleifend
-										mollis. Aenean ultrices velit eu
-										dolor elementum volutpat. Proin
-										consectetur fringilla dolor. Etiam
-										vel libero eget nisi malesuada
-										volutpat. In fermentum libero sed
-										dui placerat, at aliquam risus
-										accumsan. Cras sit amet orci
-										fermentum, vulputate tellus a,
-										ultrices ex. Nunc ac mollis nunc.
-										Nullam augue lorem, placerat eu
-										facilisis sed, cursus vel nulla.
-										Mauris non congue libero, non
-										fringilla mi. Ut facilisis felis
-										quam, in pharetra tellus vehicula
-										eu.</span>
+								<label><?= $data["user_notes"] ?></label>
 								</td>
 							</tr>
 						</table>
@@ -234,5 +179,4 @@ include("header.php")
 	</div>
 	<script src="clock.js"></script>
 </body>
-
 </html>
