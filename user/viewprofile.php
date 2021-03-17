@@ -114,7 +114,7 @@ if (isset($_POST["save"])) {
 									<label>Password</label>
 								</td>
 								<td class="data">
-								<label><?= $data["user_password"] ?></label>
+								<!--<label><?= $data["user_password"] ?></label> encrypted, not necessary --> 
 								</td>
 							</tr>
 						</table>
