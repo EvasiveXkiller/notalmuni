@@ -28,3 +28,25 @@ tr:hover {
 .hover:hover {
 	background-color: #2929299f;
 }
+
+input[type="submit"] {
+	padding: 0.5rem;
+	color: black;
+	border: none;
+	transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+	color : white;
+	background-color: var(--cardgrey);
+}
+
+.centerbox {
+	margin-top: 1rem;
+	display: grid;
+	place-items: center;
+}
+
+.statuspanel {
+	padding: 0.5rem;
+}
