@@ -7,6 +7,12 @@ $name = $password = $wrongpassword = ""; //this is needed to avoid undefined err
 $loginerror = array('password' => "", 'username' => "");
 $errors = array('name' => "", 'password' => ""); //associative array
 
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    if (isset($_GET["state"])) {
+        $loginerror["username"] = $_GET["state"] == "pending" ? "Pending for comfirmation" : "";
+    }
+}
+
 if (isset($_POST['login'])) {
     if (empty($_POST['username'])) {
         $errors['name'] = "Username is required";
@@ -33,14 +39,15 @@ if (isset($_POST['login'])) {
             if ($output["status_"] === "pending") {
                 header("location:./loginpage.php?state=pending");
                 // * add a pending message here
-            }
-            if (password_verify($password, $output["user_password"])) {
-                $_SESSION["ID"] = $output["user_ID"];
-                header("location:./user/dashboard.php");
             } else {
-                $loginerror['password'] = "Wrong password!";
-                //header("location:./loginpage.php?state=err");
-                //* header throwing user to another page
+                if (password_verify($password, $output["user_password"])) {
+                    $_SESSION["ID"] = $output["user_ID"];
+                    header("location:./user/dashboard.php");
+                } else {
+                    $loginerror['password'] = "Wrong password!";
+                    //header("location:./loginpage.php?state=err");
+                    //* header throwing user to another page
+                }
             }
         }
     }
