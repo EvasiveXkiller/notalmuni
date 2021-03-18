@@ -82,7 +82,7 @@ if (isset($_POST['reset'])) {
             </div><br>
             <div class="buttons">
                 <input type="submit" class="loginbutton" style="height:30px;" value="Reset" name="reset"></input><br><br>
-                <button class="returnlogin" onclick="redirect()">Sign In Instead</button><br /><br>
+                <button class="returnlogin" onclick="redirect()" style="color:darkgreen; text-decoration:underline; font-weight:bold;">Sign In Instead</button><br /><br>
             </div>
             <p style="font-size:10px; text-align:center;"> <i>WEDGE</i> &copy All Rights Reserved</p>
         </form>
