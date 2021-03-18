@@ -78,7 +78,7 @@ if (isset($_POST['login'])) {
                     }
                     ?>
                     <input type="input" class="form__field <?= $classusererror ?>" placeholder="Name" name="username" id='name' value="<?= $name ?>" />
-                    <label for="name" class="form__label">Name</label>
+                    <label for="name" class="form__label">Username</label>
                     <div style="color:red;"><?php echo $errors['name'] ?></div>
                     <div style="color:red;"><?php echo $loginerror['username'] ?></div>
                 </div>
