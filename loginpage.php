@@ -27,7 +27,7 @@ if (isset($_POST['login'])) {
         $result = mysqli_query($conn, $sqlstmt);
         $resultCheck = mysqli_num_rows($result);
         if ($resultCheck != 1) {
-            $loginerror['username'] = "Wrong username!";
+            $loginerror['username'] = "Username typed does not exist!";
         } else {
             $output = mysqli_fetch_assoc($result);
             if ($output["status_"] === "pending") {
