@@ -59,7 +59,7 @@ if (isset($_POST["save"])) {
 				</span>
 				<span id="clock" style="float: right"></span>
 			</div>
-			
+
 			<div class="flex-container">
 				<div id="pageheader">
 					Personal Info<br /><small>Your Information that you use on Almuni</small>
@@ -70,11 +70,32 @@ if (isset($_POST["save"])) {
 						<table style="border-collapse: collapse; width: 100%">
 							<tr>
 								<td class="key">
+									<label>Profile Picture</label>
+								</td>
+								<td class="data">
+									<label>
+										<?php
+										if ($data["imagepath"] !== null) {
+										?>
+											<img src="<?= $data['imagepath'] ?>" width="auto" height="100">
+										<?php
+										} else {
+										?>
+											No Profile Picture Uploaded
+										<?php
+										}
+										?>
+									</label>
+
+								</td>
+							</tr>
+							<tr>
+								<td class="key">
 									<label>Name</label>
 								</td>
 								<td class="data">
 									<label><?= $data["username"] ?></label>
-										
+
 								</td>
 							</tr>
 							<tr>
@@ -90,7 +111,7 @@ if (isset($_POST["save"])) {
 									<label>Identity Number</label>
 								</td>
 								<td class="data">
-								<label><?= $data["user_identity"] ?></label>
+									<label><?= $data["user_identity"] ?></label>
 								</td>
 							</tr>
 							<tr>
@@ -98,7 +119,7 @@ if (isset($_POST["save"])) {
 									<label>Gender</label>
 								</td>
 								<td class="data">
-								<label><?= $data["user_gender"] ?></label>
+									<label><?= $data["user_gender"] ?></label>
 								</td>
 							</tr>
 							<tr>
@@ -106,7 +127,7 @@ if (isset($_POST["save"])) {
 									<label>Date of Birth</label>
 								</td>
 								<td class="data">
-								<label><?= $data["user_DOB"] ?></label>
+									<label><?= $data["user_DOB"] ?></label>
 								</td>
 							</tr>
 							<tr>
@@ -114,7 +135,7 @@ if (isset($_POST["save"])) {
 									<label>Password</label>
 								</td>
 								<td class="data">
-								<!--<label><?= $data["user_password"] ?></label> encrypted, not necessary --> 
+									<label>************</label>
 								</td>
 							</tr>
 						</table>
@@ -129,7 +150,7 @@ if (isset($_POST["save"])) {
 									<label>Main Contact</label>
 								</td>
 								<td class="data">
-								<label><?= $data["main_contact"] ?></label>
+									<label><?= $data["main_contact"] ?></label>
 								</td>
 							</tr>
 							<tr>
@@ -137,7 +158,7 @@ if (isset($_POST["save"])) {
 									<label>Home</label>
 								</td>
 								<td class="data">
-								<label><?= $data["home_contact"] ?></label>
+									<label><?= $data["home_contact"] ?></label>
 								</td>
 							</tr>
 							<tr>
@@ -145,7 +166,7 @@ if (isset($_POST["save"])) {
 									<label>Office</label>
 								</td>
 								<td class="data">
-								<label><?= $data["office_contact"] ?></label>
+									<label><?= $data["office_contact"] ?></label>
 								</td>
 							</tr>
 							<tr>
@@ -153,7 +174,7 @@ if (isset($_POST["save"])) {
 									<label>Address</label>
 								</td>
 								<td class="data">
-								<label><?= $data["user_address"] ?></label>
+									<label><?= $data["user_address"] ?></label>
 								</td>
 							</tr>
 						</table>
@@ -168,7 +189,7 @@ if (isset($_POST["save"])) {
 									<label>Notes</label>
 								</td>
 								<td class="data">
-								<label><?= $data["user_notes"] ?></label>
+									<label><?= $data["user_notes"] ?></label>
 								</td>
 							</tr>
 						</table>
@@ -179,4 +200,5 @@ if (isset($_POST["save"])) {
 	</div>
 	<script src="clock.js"></script>
 </body>
+
 </html>
