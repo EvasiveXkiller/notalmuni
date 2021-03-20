@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:10365
--- Generation Time: Mar 20, 2021 at 08:51 AM
+-- Generation Time: Mar 20, 2021 at 08:59 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -20,6 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `almuni`
 --
+DROP DATABASE IF EXISTS `almuni`;
 CREATE DATABASE IF NOT EXISTS `almuni` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `almuni`;
 
