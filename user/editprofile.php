@@ -50,23 +50,34 @@ if (isset($_POST["save"])) {
 			$errors["email"] = "Email format is invalid. Example: johndoe@mail.com";
 		}
 	}
-	if (!preg_match("/\+60\d{9,10}$/i", $maincontact)) { // * +60123456789
-		$errors["maincontact"] = "mainContact is wrong. Format is +60123456789";
+	if(empty($maincontact)) {
+		$errors["maincontact"] = "Main Contact cannot be empty!";
+	} else {
+		if (!preg_match("/\+60\d{9,10}$/i", $maincontact)) { // * +60123456789
+			$errors["maincontact"] = "mainContact is wrong. Format is +60123456789";
+		}
 	}
-	if (!preg_match("/\d{2}(\-)\d{8}$/i", $homecontact)) { // * 03-12345678(8 numbers only)
-		$errors["homecontact"] = "homeContact is wrong. Format is 03-12345678";
+	if(empty($homecontact)) {
+		$errors["homecontact"] = "Home contact cannot be empty!";
+	} else {
+		if (!preg_match("/\d{2}(\-)\d{8}$/i", $homecontact)) { // * 03-12345678(8 numbers only)
+			$errors["homecontact"] = "homeContact is wrong. Format is 03-12345678";
+		}
 	}
-	if (!preg_match("/\d{2}(\-)\d{8}(\,)\d{2,4}$/", $officecontact)) { // * 03-12345678,1029(up to 4 numbers)
-		$errors["officecontact"] = "officeContact is wrong. Format is 03-12345678,1029";
+	if(empty($officecontact)) {
+		$errors["officecontact"] = "Office contact cannot be empty!";
+	} else {
+		if (!preg_match("/\d{2}(\-)\d{8}(\,)\d{2,4}$/", $officecontact)) { // * 03-12345678,1029(up to 4 numbers)
+			$errors["officecontact"] = "officeContact is wrong. Format is 03-12345678,1029";
+		}
 	}
-
 	if (!empty($_FILES['profilepic']['tmp_name']) || is_uploaded_file($_FILES['profilepic']['tmp_name'])) {
 		$genFileName = $targetDir . basename($_FILES['profilepic']['name']);
 		$imageExt = strtolower(pathinfo($genFileName, PATHINFO_EXTENSION));
 		$check = getimagesize($_FILES["profilepic"]["tmp_name"]);
 		if ($check == false) {
 			$errors['profilepic'] = "Uploaded file is not an image";
-		} else if ($_FILES["profilepic"]["size"] > 500000) {
+		} else if ($_FILES["profilepic"]["size"] > 5000000) {
 			$errors['profilepic'] = "Image is too large";
 		} else if (
 			$imageExt != "jpg" && $imageExt != "png" && $imageExt != "jpeg"
@@ -242,7 +253,7 @@ if (isset($_POST["save"])) {
 										<label>Main Contact</label>
 									</td>
 									<td class="data">
-										<input type="text" id="phone" name="maincontact" placeholder="+60123456789" value="<?= $data["main_contact"] ?>" required />
+										<input type="text" id="phone" name="maincontact" placeholder="+60123456789" value="<?= $data["main_contact"] ?>" />
 										<div class="error"><?= $errors["maincontact"] ?></div>
 									</td>
 								</tr>
@@ -251,7 +262,7 @@ if (isset($_POST["save"])) {
 										<label>Home</label>
 									</td>
 									<td class="data">
-										<input type="text" id="phone" name="homecontact" placeholder="03-12345678" value="<?= $data["home_contact"] ?>" required />
+										<input type="text" id="phone" name="homecontact" placeholder="03-12345678" value="<?= $data["home_contact"] ?>" />
 										<div class="error"><?= $errors["homecontact"] ?></div>
 									</td>
 								</tr>
@@ -260,7 +271,7 @@ if (isset($_POST["save"])) {
 										<label>Office</label>
 									</td>
 									<td class="data">
-										<input type="text" id="phone" name="officecontact" placeholder="012-345-6789" value="<?= $data["office_contact"] ?>" required />
+										<input type="text" id="phone" name="officecontact" placeholder="012-345-6789" value="<?= $data["office_contact"] ?>" />
 										<div class="error"><?= $errors["officecontact"] ?></div>
 									</td>
 								</tr>

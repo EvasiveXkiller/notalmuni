@@ -51,12 +51,12 @@ if (isset($_POST["Register"])) {
 		}
 	}
 	if (!array_filter($errors)) {
-		$insertsql = "INSERT INTO users (username, user_email, user_identity, user_gender, user_password, user_address, status_) VALUES (?,?,?,?,?,?,?)";
+		$insertsql = "INSERT INTO users (username, user_email, user_identity, user_gender, user_password, user_address, status_, main_contact) VALUES (?,?,?,?,?,?,?,?)";
 		$stmt = mysqli_stmt_init($conn);
 		if (!mysqli_stmt_prepare($stmt, $insertsql)) {
 			echo mysqli_stmt_error($stmt);
 		} else {
-			mysqli_stmt_bind_param($stmt, "sssssss", $username, $email, $identity, $gender, $hashedpassword, $location, $status);
+			mysqli_stmt_bind_param($stmt, "ssssssss", $username, $email, $identity, $gender, $hashedpassword, $location, $status, $phone);
 			mysqli_stmt_execute($stmt);
 			header("location:./registerpage.php?status=success");
 		}
