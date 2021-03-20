@@ -41,11 +41,11 @@ $usertablecheck = mysqli_num_rows($usertableresult);   //no. of output results
 					<td>UserEmail</td>
 					<td>User Identity</td>
 					<td>Address</td>
-					<td>User Gender</td>
-					<td>User DOB</td>
+					<td style="width:5%;">Gender</td>
+					<td style="width:6%;">User DOB</td>
 					<td>Main Contact</td>
-					<td>Home Contact</td>
-					<td>Office Contact</td>
+					<td style="width:7%;">Home Contact</td>
+					<td style="width:9%;">Office Contact</td>
 					<td>Notes</td>
 					<td>Status</td>
 				</tr>

@@ -10,9 +10,11 @@
 	font-family: var(--fonts);
 }
 .table {
-	min-width: 98%;
-	margin-left: 1%;
-	margin-top: 1%;
+	min-width: 99%;
+	margin-left: 0.5%;
+	Margin-right:0.5%;
+	margin-top: 0.5%;
+	margin-bottom:0.5%;
 	text-align: center;
 	background-color: rgba(71, 71, 71, 0.829);
 	border-collapse: collapse;
