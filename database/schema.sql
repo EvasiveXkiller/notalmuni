@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:10365
--- Generation Time: Mar 20, 2021 at 08:32 AM
+-- Generation Time: Mar 20, 2021 at 08:51 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `almuni`
 --
+CREATE DATABASE IF NOT EXISTS `almuni` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `almuni`;
 
 -- --------------------------------------------------------
 
@@ -27,11 +29,14 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE IF NOT EXISTS `admin` (
   `admin_id` int(11) NOT NULL,
   `admin_name` varchar(45) DEFAULT NULL,
   `admin_email` varchar(45) DEFAULT NULL,
-  `admin_password` varchar(1000) NOT NULL
+  `admin_password` varchar(1000) NOT NULL,
+  PRIMARY KEY (`admin_id`),
+  UNIQUE KEY `admin_id_UNIQUE` (`admin_id`),
+  UNIQUE KEY `admin_password_UNIQUE` (`admin_password`) USING HASH
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -47,13 +52,14 @@ INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_email`, `admin_password`) 
 -- Table structure for table `annoucements`
 --
 
-CREATE TABLE `annoucements` (
-  `annouce_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `annoucements` (
+  `annouce_id` int(11) NOT NULL AUTO_INCREMENT,
   `annouce_title` varchar(45) NOT NULL,
   `annouce_content` varchar(1000) NOT NULL,
   `annouce_author` varchar(45) NOT NULL,
-  `timestamp_` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `timestamp_` datetime NOT NULL,
+  PRIMARY KEY (`annouce_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `annoucements`
@@ -70,8 +76,8 @@ INSERT INTO `annoucements` (`annouce_id`, `annouce_title`, `annouce_content`, `a
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `user_ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+  `user_ID` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(1000) NOT NULL,
   `user_email` varchar(45) NOT NULL,
   `imagepath` varchar(1000) DEFAULT NULL,
@@ -84,8 +90,9 @@ CREATE TABLE `users` (
   `home_contact` varchar(20) DEFAULT NULL,
   `office_contact` varchar(20) DEFAULT NULL,
   `user_notes` varchar(1000) DEFAULT NULL,
-  `status_` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `status_` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`user_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -95,46 +102,6 @@ INSERT INTO `users` (`user_ID`, `username`, `user_email`, `imagepath`, `user_ide
 (113, 'Jack Tok', 'jack@gmail.com', 'userimages/113.jpg', '', '', 'male', '$2y$10$M/5pPhGEp/DDC49LuWqFEewAfyCZ7tbypsJVzG3WHLKlfzLwKWdQu', '0000-00-00', '+60123456789', '03-12345678', '03-12345678,126', '    ', 'ok'),
 (114, 'Shelia', 'shelia@gmail.com', NULL, '', '', 'female', '$2y$10$0lK0cOLRpbxNX0WEVI8MFeIvzTaFFmqMi9j.YTLiomhBVa6uIg1Di', NULL, NULL, NULL, NULL, NULL, 'pending'),
 (115, 'Carlson', 'carlson@gmail.com', NULL, '', '', 'male', '$2y$10$0uJTLMPJATADjl/Wpn83he4B2aB/k7.eIyIqQsCLuLEukwO.yuTFi', NULL, NULL, NULL, NULL, NULL, 'pending');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`admin_id`),
-  ADD UNIQUE KEY `admin_id_UNIQUE` (`admin_id`),
-  ADD UNIQUE KEY `admin_password_UNIQUE` (`admin_password`) USING HASH;
-
---
--- Indexes for table `annoucements`
---
-ALTER TABLE `annoucements`
-  ADD PRIMARY KEY (`annouce_id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_ID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `annoucements`
---
-ALTER TABLE `annoucements`
-  MODIFY `annouce_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
