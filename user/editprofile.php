@@ -313,7 +313,7 @@ if (isset($_POST["save"])) {
 			</form>
 		</div>
 	</div>
-	<script src="clock.js"></script>
+	<script src="../clock.js"></script>
 </body>
 
 </html>
