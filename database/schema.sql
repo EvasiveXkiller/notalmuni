@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:10365
--- Generation Time: Mar 05, 2021 at 07:33 AM
+-- Generation Time: Mar 20, 2021 at 08:32 AM
 -- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- PHP Version: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `almuni`
 --
-CREATE DATABASE IF NOT EXISTS `almuni` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `almuni`;
 
 -- --------------------------------------------------------
 
@@ -33,7 +31,7 @@ CREATE TABLE `admin` (
   `admin_id` int(11) NOT NULL,
   `admin_name` varchar(45) DEFAULT NULL,
   `admin_email` varchar(45) DEFAULT NULL,
-  `admin_password` varchar(45) NOT NULL
+  `admin_password` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -41,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_email`, `admin_password`) VALUES
-(1, 'Carlson', 'notcarlson@gmail.com', '123456');
+(1, 'Carlson', 'notcarlson@gmail.com', '$2y$10$rfCleVOn0wmYbhCPUPOFbe7YdVon4VU4dbeICyFHkAYpVUkY6Okyi');
 
 -- --------------------------------------------------------
 
@@ -62,10 +60,9 @@ CREATE TABLE `annoucements` (
 --
 
 INSERT INTO `annoucements` (`annouce_id`, `annouce_title`, `annouce_content`, `annouce_author`, `timestamp_`) VALUES
-(9, 'a this is annoyinh', 'What the hell is this test i hope it work', 'Carlson', '2021-02-02 14:31:04'),
-(10, 'boi this is something that works', 'i hope the sorting system works', 'Carlson', '2021-02-02 14:45:13'),
-(11, 'RRRRRR', 'this should work', 'Carlson', '2021-02-02 15:17:43'),
-(14, 'This is somebody', 'Yaya', 'Carlson', '2021-02-05 20:27:46');
+(16, 'Welcome To Almuni!', 'We hope that you enjoy your stay here! Feel free to look around for the things that you can do here', 'Carlson', '2021-03-20 15:22:42'),
+(17, 'All contacts are securely stored!', 'Your contacts are stored with the latest technology that are all secured. Your password is also hashed too! This means in case of a data breach, your passwords are all still encrypted and non readable. Have fun!', 'Carlson', '2021-03-20 15:24:14'),
+(18, 'Lorem ipsum dolor sit amet', 'Yep, that is the announcement that we have to make. We just like you to know that all of us are still human beings and not robots. Have fun!!', 'Carlson', '2021-03-20 15:25:21');
 
 -- --------------------------------------------------------
 
@@ -77,6 +74,7 @@ CREATE TABLE `users` (
   `user_ID` int(11) NOT NULL,
   `username` varchar(1000) NOT NULL,
   `user_email` varchar(45) NOT NULL,
+  `imagepath` varchar(1000) DEFAULT NULL,
   `user_identity` varchar(22) DEFAULT NULL,
   `user_address` varchar(45) DEFAULT NULL,
   `user_gender` varchar(10) DEFAULT NULL,
@@ -93,8 +91,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_ID`, `username`, `user_email`, `user_identity`, `user_address`, `user_gender`, `user_password`, `user_DOB`, `main_contact`, `home_contact`, `office_contact`, `user_notes`, `status_`) VALUES
-(2, 'test', 'evasivexkiller@gmail.com', '023659856322', 'Hong Kong', 'female', '$2y$10$x6IiF1kmcwaLvb5xkJNgnOehHnQFag1FOsk9YMCJLlfYS41i1BU3q', '2019-06-02', '012-369-2012', '023-698-4569', '03-96547851', 'This is sometest that we should take care of', 'ok');
+INSERT INTO `users` (`user_ID`, `username`, `user_email`, `imagepath`, `user_identity`, `user_address`, `user_gender`, `user_password`, `user_DOB`, `main_contact`, `home_contact`, `office_contact`, `user_notes`, `status_`) VALUES
+(113, 'Jack Tok', 'jack@gmail.com', 'userimages/113.jpg', '', '', 'male', '$2y$10$M/5pPhGEp/DDC49LuWqFEewAfyCZ7tbypsJVzG3WHLKlfzLwKWdQu', '0000-00-00', '+60123456789', '03-12345678', '03-12345678,126', '    ', 'ok'),
+(114, 'Shelia', 'shelia@gmail.com', NULL, '', '', 'female', '$2y$10$0lK0cOLRpbxNX0WEVI8MFeIvzTaFFmqMi9j.YTLiomhBVa6uIg1Di', NULL, NULL, NULL, NULL, NULL, 'pending'),
+(115, 'Carlson', 'carlson@gmail.com', NULL, '', '', 'male', '$2y$10$0uJTLMPJATADjl/Wpn83he4B2aB/k7.eIyIqQsCLuLEukwO.yuTFi', NULL, NULL, NULL, NULL, NULL, 'pending');
 
 --
 -- Indexes for dumped tables
@@ -105,8 +105,8 @@ INSERT INTO `users` (`user_ID`, `username`, `user_email`, `user_identity`, `user
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`),
-  ADD UNIQUE KEY `admin_password_UNIQUE` (`admin_password`),
-  ADD UNIQUE KEY `admin_id_UNIQUE` (`admin_id`);
+  ADD UNIQUE KEY `admin_id_UNIQUE` (`admin_id`),
+  ADD UNIQUE KEY `admin_password_UNIQUE` (`admin_password`) USING HASH;
 
 --
 -- Indexes for table `annoucements`
@@ -128,13 +128,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `annoucements`
 --
 ALTER TABLE `annoucements`
-  MODIFY `annouce_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `annouce_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
