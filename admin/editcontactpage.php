@@ -114,7 +114,7 @@ if (isset($_POST["search"])) {
 							<div class="placecenter">
 								<form action="editcontactpage.php" method="POST" class="grid-container2">
 
-									<div>Profile Pic</div>
+									<div>Profile Picture</div>
 									<div><?php
 											if ($row["imagepath"] !== null) {
 											?>
