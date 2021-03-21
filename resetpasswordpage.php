@@ -3,7 +3,7 @@ include("./dbconn.php");
 include("./processor.php");
 
 $errors = array('resetname' => "", 'resetpword' => "", 'confirmpword' => "");
-$name = $resetpword = $confirmpword = "";      //associative array 
+$name = $resetpword = $confirmpword = $resetsuccess = "";      //associative array 
 if (isset($_POST['reset'])) {
     if (empty($_POST['resetname'])) {                     //checks if the email text box is empty when submitted
         $errors['resetname'] = "Username is required";
@@ -29,7 +29,7 @@ if (isset($_POST['reset'])) {
         }
     }
     if (!array_filter($errors)) {
-        echo "entered";
+        $resetsuccess="Reset password successful!";    
         $name = mysqli_real_escape_string($conn, safe_converter($_POST["resetname"]));
         $confirmpword = mysqli_real_escape_string($conn, safe_converter($_POST["confirmpword"]));
         $hashedpassword = password_hash($confirmpword, PASSWORD_DEFAULT);
@@ -79,11 +79,14 @@ if (isset($_POST['reset'])) {
                     <label for="confirmpword" class="form__label">Confirm Password:</label>
                     <div class="errors"><?php echo $errors['confirmpword'] ?></div><br>
                 </div>
+                <div style="text-align:center; font-size:0.8em; color:green;"><?=$resetsuccess ?></div>
             </div><br>
+            
             <div class="buttons">
                 <input type="submit" class="loginbutton" style="height:30px;" value="Reset" name="reset"></input><br><br>
                 <button class="returnlogin" onclick="redirect()" style="color:#40736e; font-weight:bold;">Sign In Instead</button><br /><br>
             </div>
+            
             <p style="font-size:10px; text-align:center;"> <i>WEDGE</i> &copy All Rights Reserved</p>
         </form>
     </div>
