@@ -29,7 +29,7 @@ if (isset($_POST['reset'])) {
         }
     }
     if (!array_filter($errors)) {
-        $resetsuccess="Reset password successful!";    
+        $resetsuccess = "Reset password successful! <br> Please wait for admin to acknowledge the change";
         $name = mysqli_real_escape_string($conn, safe_converter($_POST["resetname"]));
         $confirmpword = mysqli_real_escape_string($conn, safe_converter($_POST["confirmpword"]));
         $hashedpassword = password_hash($confirmpword, PASSWORD_DEFAULT);
@@ -79,14 +79,14 @@ if (isset($_POST['reset'])) {
                     <label for="confirmpword" class="form__label">Confirm Password:</label>
                     <div class="errors"><?php echo $errors['confirmpword'] ?></div><br>
                 </div>
-                <div style="text-align:center; font-size:0.8em; color:green;"><?=$resetsuccess ?></div>
-            </div><br>
-            
+                <div style="text-align:center; font-size:0.8em; color:green;"><?= $resetsuccess ?></div>
+            </div>
+            <br>
             <div class="buttons">
                 <input type="submit" class="loginbutton" style="height:30px;" value="Reset" name="reset"></input><br><br>
                 <button class="returnlogin" onclick="redirect()" style="color:#40736e; font-weight:bold;">Sign In Instead</button><br /><br>
             </div>
-            
+
             <p style="font-size:10px; text-align:center;"> <i>WEDGE</i> &copy All Rights Reserved</p>
         </form>
     </div>
