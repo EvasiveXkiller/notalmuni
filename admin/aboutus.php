@@ -96,13 +96,13 @@ include("../dbconn.php");
 									<img src="../assets/phone.png" width="50px" height="50px"></img>
 								</div>
 								<div class="icon_text">
-									<a href="03-9770 1155">03-9770 1155</a>
+									<a href="tel:03-9770 1155">03-9770 1155</a>
 								</div>
 								<div>
 									<img src="../assets/map.png" width="50px" height="50px"></img>
 								</div>
 								<div class="icon_text">
-									<a href="http://maps.google.com/?q=V01-06-01,Lingkaran SV Sunway Velocity, 55100 Kuala Lumpur">
+									<a href="http://maps.google.com/?q=V01-06-01,Lingkaran SV Sunway Velocity, 55100 Kuala Lumpur" target="_blank">
 										V01-06-01,Lingkaran SV Sunway
 										Velocity, 55100 Kuala Lumpur</a>
 								</div>
