@@ -33,6 +33,7 @@ include("session.php")
 					<div>
 						<h2>Announcements</h2>
 						<button id="addmore" onclick="redirectToAdd()">+</button>
+						<p style="font-size: medium; padding-top: 20px;">Tip: Clicking on the annoucement deletes it!</p>
 					</div>
 				</div>
 				<div style="margin-left:auto; order:2">
